@@ -1,4 +1,4 @@
-<section class="bidForm">
-    <input type="text" placeholder="Your Bid Amount">
-    <button>Place Bid!</button>
+<section ng-controller='BidController' class="bidForm">
+    <input type="text" placeholder="Your Bid Amount" ng-model='bid_amount'>
+    <button class="bidBtn" ng-click='submit()'>Place Bid!</button>
 </section>

@@ -13,7 +13,7 @@ for (let i = 0; i < services.length; i++) {
 // require controllers
 const controllers = [
     require('./controllers/BidController'),
-    require('./controllers/BookedCourseController'),
+    // require('./controllers/BookedCourseController'),
 ];
 
 // loop all controllers
