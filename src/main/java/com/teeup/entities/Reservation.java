@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "bidresult")
-public class BidResult {
+public class Reservation {
     @Id
     @GeneratedValue
     int id;
@@ -33,10 +33,10 @@ public class BidResult {
     @Column(nullable = false)
     String location;
 
-    public BidResult() {
+    public Reservation() {
     }
 
-    public BidResult(int id, String date, String startTime, String endTime, int golfers, int amount, int stars, String location) {
+    public Reservation(int id, String date, String startTime, String endTime, int golfers, int amount, int stars, String location) {
         this.id = id;
         this.date = date;
         this.startTime = startTime;

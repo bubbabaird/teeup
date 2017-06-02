@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by BUBBABAIRD on 5/31/17.
  */
 
-public class Bid {
+public class Request {
 
     int id;
     String date;
@@ -14,13 +14,13 @@ public class Bid {
     String endTime;
     int golfers;
     int amount;
-    int stars;
+    double stars;
     String location;
 
-    public Bid() {
+    public Request() {
     }
 
-    public Bid(int id, String date, String startTime, String endTime, int golfers, int amount, int stars, String location) {
+    public Request(int id, String date, String startTime, String endTime, int golfers, int amount, double stars, String location) {
         this.id = id;
         this.date = date;
         this.startTime = startTime;
@@ -79,11 +79,11 @@ public class Bid {
         this.amount = amount;
     }
 
-    public int getStars() {
+    public double getStars() {
         return stars;
     }
 
-    public void setStars(int stars) {
+    public void setStars(double stars) {
         this.stars = stars;
     }
 

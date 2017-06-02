@@ -6,45 +6,41 @@ import javax.persistence.*;
  * Created by BUBBABAIRD on 5/31/17.
  */
 @Entity
-@Table(name = "bidresult")
-public class Reservation {
+@Table(name = "golfcourses")
+public class GolfCourse {
     @Id
     @GeneratedValue
     int id;
 
     @Column(nullable = false)
-    String date;
+    String name;
 
     @Column(nullable = false)
-    String startTime;
+    int minPrice;
 
     @Column(nullable = false)
-    String endTime;
+    String gclocation;
 
     @Column(nullable = false)
-    int golfers;
+    String openTime;
 
     @Column(nullable = false)
-    int amount;
+    String closeTime;
 
     @Column(nullable = false)
-    int stars;
+    double starRating;
 
-    @Column(nullable = false)
-    String location;
-
-    public Reservation() {
+    public GolfCourse() {
     }
 
-    public Reservation(int id, String date, String startTime, String endTime, int golfers, int amount, int stars, String location) {
+    public GolfCourse(int id, String name, int minPrice, String gclocation, String openTime, String closeTime, double starRating) {
         this.id = id;
-        this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.golfers = golfers;
-        this.amount = amount;
-        this.stars = stars;
-        this.location = location;
+        this.name = name;
+        this.minPrice = minPrice;
+        this.gclocation = gclocation;
+        this.openTime = openTime;
+        this.closeTime = closeTime;
+        this.starRating = starRating;
     }
 
     public int getId() {
@@ -55,59 +51,51 @@ public class Reservation {
         this.id = id;
     }
 
-    public String getDate() {
-        return date;
+    public String getName() {
+        return name;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getStartTime() {
-        return startTime;
+    public int getMinPrice() {
+        return minPrice;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
+    public void setMinPrice(int minPrice) {
+        this.minPrice = minPrice;
     }
 
-    public String getEndTime() {
-        return endTime;
+    public String getGclocation() {
+        return gclocation;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setGclocation(String gclocation) {
+        this.gclocation = gclocation;
     }
 
-    public int getGolfers() {
-        return golfers;
+    public String getOpenTime() {
+        return openTime;
     }
 
-    public void setGolfers(int golfers) {
-        this.golfers = golfers;
+    public void setOpenTime(String openTime) {
+        this.openTime = openTime;
     }
 
-    public int getAmount() {
-        return amount;
+    public String getCloseTime() {
+        return closeTime;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setCloseTime(String closeTime) {
+        this.closeTime = closeTime;
     }
 
-    public int getStars() {
-        return stars;
+    public double getStarRating() {
+        return starRating;
     }
 
-    public void setStars(int stars) {
-        this.stars = stars;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public void setStarRating(double starRating) {
+        this.starRating = starRating;
     }
 }
