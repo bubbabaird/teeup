@@ -25,6 +25,7 @@ for (let i = 0; i < controllers.length; i++) {
 const components = [
     require('./components/bidfield'),
     require('./components/userdashboard'),
+    require('./components/courseview'),
 ]
 
 // loop all components

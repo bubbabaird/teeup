@@ -7,12 +7,17 @@ module.exports = {
         };
         let autocomplete = new google.maps.places.Autocomplete(input, options);
         
+        $scope.valid = false;
+
         autocomplete.addListener('place_changed', function () {
-            $scope.location = autocomplete.getPlace();
-            // $scope.location = {
-            //     lat: autocomplete.getPlace().location.geometry.location.lat(),
-            //     long: autocomplete.getPlace().location.geometry.location.long(),
-            // }
+            $scope.location = {
+                lat: autocomplete.getPlace().geometry.location.lat(),
+                long: autocomplete.getPlace().geometry.location.lng(),
+            }
+
+            $scope.$apply(function () {
+                $scope.valid = true;
+            });
         });
 
         $scope.bid_amount = '';
@@ -21,7 +26,7 @@ module.exports = {
         $scope.end_time = '';
         $scope.selected_day = '';
         $scope.miles = '';
-        $scope.location = '';
+        $scope.location = {};
         $scope.golfer_number = '';
         $scope.submit = function () {
             let bid = {
@@ -35,7 +40,7 @@ module.exports = {
                 golfers: $scope.golfer_number,
             }
             console.log(bid);
-            // BidService.submitBid($scope.bid_amount);
+            // BidService.submitBid(bid);
         }
         // $scope.result = BidService.getCourse(); 
     }
