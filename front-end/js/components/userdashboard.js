@@ -2,7 +2,7 @@ module.exports = {
     name: "userDashboard",
     array: {
         templateUrl: 'templates/userdashboard.html',
-        controller: 'BookedCourseController',
+        controller: 'UserDashboardController',
         bindings: {
             which: "<",
         }
