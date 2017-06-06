@@ -6,7 +6,9 @@ module.exports = {
         const course = {
             name: 'Pinehurst', 
             location: '112 South Tryon Street, Charlotte NC 28206',
-            bid: '42'
+            bid: '42', 
+            time: '3:00pm',
+            rating: '4'
         }; 
 
         return {
