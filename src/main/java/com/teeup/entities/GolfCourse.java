@@ -1,6 +1,7 @@
 package com.teeup.entities;
 
 import javax.persistence.*;
+import java.time.LocalTime;
 
 /**
  * Created by BUBBABAIRD on 5/31/17.
@@ -19,28 +20,36 @@ public class GolfCourse {
     int minPrice;
 
     @Column(nullable = false)
-    String gclocation;
+    LocalTime openTime;
 
     @Column(nullable = false)
-    String openTime;
-
-    @Column(nullable = false)
-    String closeTime;
+    LocalTime closeTime;
 
     @Column(nullable = false)
     double starRating;
 
+    @Column(nullable = false)
+    double gcLat;
+
+    @Column(nullable = false)
+    double gcLong;
+
+    @Column(nullable = false)
+    String location;
+
     public GolfCourse() {
     }
 
-    public GolfCourse(int id, String name, int minPrice, String gclocation, String openTime, String closeTime, double starRating) {
+    public GolfCourse(int id, String name, int minPrice, LocalTime openTime, LocalTime closeTime, double starRating, double gcLat, double gcLong, String location) {
         this.id = id;
         this.name = name;
         this.minPrice = minPrice;
-        this.gclocation = gclocation;
         this.openTime = openTime;
         this.closeTime = closeTime;
         this.starRating = starRating;
+        this.gcLat = gcLat;
+        this.gcLong = gcLong;
+        this.location = location;
     }
 
     public int getId() {
@@ -67,27 +76,19 @@ public class GolfCourse {
         this.minPrice = minPrice;
     }
 
-    public String getGclocation() {
-        return gclocation;
-    }
-
-    public void setGclocation(String gclocation) {
-        this.gclocation = gclocation;
-    }
-
-    public String getOpenTime() {
+    public LocalTime getOpenTime() {
         return openTime;
     }
 
-    public void setOpenTime(String openTime) {
+    public void setOpenTime(LocalTime openTime) {
         this.openTime = openTime;
     }
 
-    public String getCloseTime() {
+    public LocalTime getCloseTime() {
         return closeTime;
     }
 
-    public void setCloseTime(String closeTime) {
+    public void setCloseTime(LocalTime closeTime) {
         this.closeTime = closeTime;
     }
 
@@ -97,5 +98,29 @@ public class GolfCourse {
 
     public void setStarRating(double starRating) {
         this.starRating = starRating;
+    }
+
+    public double getGcLat() {
+        return gcLat;
+    }
+
+    public void setGcLat(double gcLat) {
+        this.gcLat = gcLat;
+    }
+
+    public double getGcLong() {
+        return gcLong;
+    }
+
+    public void setGcLong(double gcLong) {
+        this.gcLong = gcLong;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

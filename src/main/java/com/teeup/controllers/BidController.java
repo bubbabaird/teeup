@@ -3,6 +3,7 @@ package com.teeup.controllers;
 import com.opencsv.CSVReader;
 import com.teeup.entities.GolfCourse;
 import com.teeup.entities.Request;
+import com.teeup.entities.Reservation;
 import com.teeup.entities.User;
 import com.teeup.repositories.GolfCourseRepo;
 import com.teeup.repositories.ReservationRepo;
@@ -17,6 +18,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalTime;
 
 /**
  * Created by BUBBABAIRD on 5/31/17.
@@ -30,7 +32,7 @@ public class BidController {
 
     public BidController(BidService bidService, ReservationRepo reservationRepo, UserRepo users, GolfCourseRepo golfCourseRepo) {
         this.bidService = bidService;
-        ReservationRepo = reservationRepo;
+        this.ReservationRepo = reservationRepo;
         this.users = users;
         this.golfCourseRepo = golfCourseRepo;
     }
@@ -49,11 +51,13 @@ public class BidController {
                 System.out.println("Hey Dude");
                 GolfCourse golfCourse = new GolfCourse();
                 golfCourse.setName(columns[0]);
-                golfCourse.setGclocation(columns[1]);
-                golfCourse.setMinPrice(Integer.valueOf(columns[2]));
-                golfCourse.setOpenTime(columns[3]);
-                golfCourse.setCloseTime(columns[4]);
-                golfCourse.setStarRating(Double.valueOf(columns[5]));
+                golfCourse.setGcLat(Double.valueOf(columns[1]));
+                golfCourse.setGcLong(Double.valueOf(columns[2]));
+                golfCourse.setLocation(columns[3]);
+                golfCourse.setMinPrice(Integer.valueOf(columns[4]));
+                golfCourse.setOpenTime(LocalTime.parse(columns[5]));
+                golfCourse.setCloseTime(LocalTime.parse(columns[6]));
+                golfCourse.setStarRating(Double.valueOf(columns[7]));
 
                 golfCourseRepo.save(golfCourse);
             }
@@ -79,8 +83,24 @@ public class BidController {
     // Make a POST request for all of the bid information
     @RequestMapping(path = "/bid", method = RequestMethod.POST)
     // create a new Request object
-    // how do I take the bid information and put it in my new bid object??
-    public void addBid(@RequestBody Request userBid) {
+    // make a new method that returns a Reservation
+    public Reservation addBid(@RequestBody Request userBid) {
+        // return the findAndMakeReservation from bidService and pass in the userBid
+        return bidService.findAndMakeReservation(userBid);
+        // figure out a simple algorithm for which golf course to pick
+        // based off the details of the request.
+
+        // when you figure out the details of which golf course
+        // is best for this request, create a bid that points to this user
+        // and a particular golf course
+
+        // at a minimum, each bid should contain a reference to:
+        // 1: the golf course
+        // 2: the user that made the request.
+
+        // it should also have a boolean field for if it's been accepted or not.
+
+
 //        bidService.makeReservation(userBid);
         // save the bid information to our database
     }
