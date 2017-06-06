@@ -27,6 +27,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-mustache')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
+
+	// https://mvnrepository.com/artifact/com.opencsv/opencsv
+	compile ('com.opencsv:opencsv:3.9')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
 	runtime('org.postgresql:postgresql')
