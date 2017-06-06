@@ -22,7 +22,7 @@ module.exports = {
         });
 
         $scope.stars = null;
-        $scope.bid_amount = 100;
+        $scope.bid_amount = '';
         // $scope.star_select = 3;
         $scope.onRatingChange = function ($event) {
             console.log('rating changed');
