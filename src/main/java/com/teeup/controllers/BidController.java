@@ -81,6 +81,7 @@ public class BidController {
 
 
     // Make a POST request for all of the bid information
+    @CrossOrigin
     @RequestMapping(path = "/bid", method = RequestMethod.POST)
     // create a new Request object
     // make a new method that returns a Reservation
