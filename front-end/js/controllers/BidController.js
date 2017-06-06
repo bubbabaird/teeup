@@ -6,8 +6,9 @@ module.exports = {
             types: ['establishment']
         };
         let autocomplete = new google.maps.places.Autocomplete(input, options);
-        
+      
         $scope.valid = false;
+
 
         autocomplete.addListener('place_changed', function () {
             $scope.location = {
@@ -20,18 +21,25 @@ module.exports = {
             });
         });
 
-        $scope.bid_amount = '';
-        $scope.star_select = '';
+        $scope.stars = null;
+        $scope.bid_amount = 100;
+        // $scope.star_select = 3;
+        $scope.onRatingChange = function ($event) {
+            console.log('rating changed');
+            console.log($event.rating);
+            $scope.stars = $event.rating; 
+        }
         $scope.start_time = '';
         $scope.end_time = '';
-        $scope.selected_day = '';
+        $scope.selected_day = 'today';
         $scope.miles = '';
         $scope.location = {};
         $scope.golfer_number = '';
         $scope.submit = function () {
             let bid = {
                 amount: $scope.bid_amount,
-                stars: $scope.star_select,
+                // stars: $scope.star_select,
+                stars: $scope.stars, 
                 start_time: $scope.start_time,
                 end_time: $scope.end_time,
                 day: $scope.selected_day,
@@ -40,8 +48,14 @@ module.exports = {
                 golfers: $scope.golfer_number,
             }
             console.log(bid);
+
+            // BidService.getCourse();
+
             // BidService.submitBid(bid);
         }
-        // $scope.result = BidService.getCourse(); 
+        // BidService.submitBid($scope.bid_amount);
     }
+
+
+    // $scope.result = BidService.getCourse(); 
 }

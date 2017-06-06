@@ -1,4 +1,4 @@
-const app = angular.module('teeUpApp', ['ui.router']);
+const app = angular.module('teeUpApp', ['ui.router', 'star-rating']);
 
 // require service
 const services = [
@@ -13,11 +13,13 @@ for (let i = 0; i < services.length; i++) {
 // require controllers
 const controllers = [
     require('./controllers/BidController'),
-    // require('./controllers/BookedCourseController'),
+    require('./controllers/UserDashboardController'),
+    // require('./controllers/StarController'),
 ];
 
 // loop all controllers
 for (let i = 0; i < controllers.length; i++) {
+    console.log("controller.name: " + controllers[i].name);
     app.controller(controllers[i].name, controllers[i].func);
 };
 
@@ -44,6 +46,7 @@ app.config(function ($stateProvider) {
     $stateProvider.state({
         name: 'userDashboard',
         url: '/dashboard',
-        component: 'userdashboard'
+        component: 'userDashboard'
     });
+
 })
