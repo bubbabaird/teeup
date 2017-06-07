@@ -1,5 +1,7 @@
 package com.teeup.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -26,6 +28,7 @@ public class Reservation {
     int amount;
 
     @ManyToOne
+    @JsonBackReference
     GolfCourse course;
 
     public Reservation() {

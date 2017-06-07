@@ -78,6 +78,20 @@ public class BidService {
                 // if all ^ is true, then make a reservation
                 return makeReservation(g, bid);
             }
+
+//          Test Code:
+//            if (
+//                    start.isAfter(g.getOpenTime()) &&
+//                    start.isBefore(g.getCloseTime()) &&
+//                    end.isAfter(start) &&
+//                    end.isBefore(g.getCloseTime()) &&
+//                    g.getMinPrice() <= amt &&
+//                    g.getStarRating() >= star &&
+//                    calculateDistance(g.getGcLat(), g.getGcLong(), bid.getReqLat(), bid.getReqLong()) <= bid.getMiles()
+//
+//                    ) {
+//                return makeReservation(g, bid);
+//            }
         }
         return null;
     }
@@ -141,13 +155,13 @@ public class BidService {
         // results.setStartTime();
         // using the given golf course and the given bid.
 
-//      set 'startDateTime' = to the combination of the LocalDateTime of whatever the requestDate is (either "today" or "tomorrow")
+//      set 'startDateTime' = to the combination of the LocalDateTime of whatever the requestDate is (either "today" or "tomorrow") + the user's StartTime
         LocalDateTime startDateTime = LocalDateTime.of(requestDate, start);
 
 //      set the StartTime for this new 'results' reservation to the new combined 'StartDateTime'
         results.setStartTime(startDateTime);
 
-//      set the 'endDateTime' = to the combination of the LocalDateTime of whatever the requestDate is (either "today" or "tomorrow")
+//      set the 'endDateTime' = to the combination of the LocalDateTime of whatever the requestDate is (either "today" or "tomorrow") + the user's EndTime
         LocalDateTime endDateTime = LocalDateTime.of(requestDate, end);
 
 //      set the EndTime for this new 'results' reservation tot he new combined 'EndDateTime'
@@ -167,15 +181,22 @@ public class BidService {
 
         return results;
 
+//      ask the database if there is a reservation stored for [GOLF COURSE] at [bid.getStartTime]
 //      Date
 //      Time
 //      Amount
-
-
-
 //      Stars
-
 //      Location
+
+//        Course Page
+//        needs to display all the bids that are stored in the database per GOLF COURSE page
+//        get request
+//        for GOLF COURSE, get all the reservations from
+//        Courses can have many reservations
+//        Reservation can only have one Course
+//        The Reservaton class has a:
+//        @ManyToOne relationship with
+//        GolfCourse course;
 
 
     }
