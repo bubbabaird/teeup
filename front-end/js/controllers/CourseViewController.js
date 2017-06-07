@@ -10,12 +10,12 @@ module.exports = {
                 min: $scope.min_bid,
                 max: $scope.max_bid,
             }
-            CourseService.range(rangeReq);
+            CourseService.setRange(rangeReq);
             $scope.min_bid = '';
             $scope.max_bid = '';
         };
-        $scope.changeStatus = function () {
-            CourseService.changeStatus();
-        };
+        // $scope.changeStatus = function () {
+        //     CourseService.changeStatus();
+        // };
     }
 }
