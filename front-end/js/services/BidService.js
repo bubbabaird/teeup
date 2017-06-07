@@ -4,17 +4,24 @@ module.exports = {
     func: function ($http) {
         
         const course = {
-            name: 'Pinehurst', 
-            location: '112 South Tryon Street, Charlotte NC 28206',
-            bid: '42', 
+            name: '', 
+            location: '',
+            bid: '40', 
             time: '3:00pm',
             rating: '4'
         }; 
 
         return {
-            sumbitBid: function (amount) {
-               $http.post('https.//', JSON.stringify(data)).then(function (reponse) {
-               })     
+            submitBid: function (amount) {
+               $http.post('https://pure-peak-13504.herokuapp.com/bid', amount).then(function (response) {
+                console.log(response.data.course);
+                let result = response.data.course;
+                course.name = result.name;
+                course.location = result.location;
+            })   
+                // $http.post('http://192.168.1.38:8080/bid', amount).then(function (response) {
+                
+                // })   
             }, 
 
             getCourse: function () {

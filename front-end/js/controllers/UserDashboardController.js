@@ -1,7 +1,6 @@
 module.exports = {
    name: 'UserDashboardController',
    func: function ($scope, BidService) {
-       console.log("UserDashboardController called")
        $scope.course = BidService.getCourse();
    }
 }
