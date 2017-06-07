@@ -13,6 +13,6 @@ import java.util.List;
  */
 public interface ReservationRepo extends CrudRepository<Reservation, Integer> {
 
-//    @Query("SELECT all FROM GolfCourses WHERE g.name LIKE ?1%")
+//    @Query("SELECT * FROM GolfCourses WHERE g.name LIKE ?1%")
 //    List<GolfCourse> findByNameStartsWith(String name);
 }

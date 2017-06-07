@@ -1,25 +1,23 @@
 package com.teeup.entities;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * Created by BUBBABAIRD on 5/31/17.
  */
 @Entity
-@Table(name = "bidresult")
+@Table(name = "reservations")
 public class Reservation {
     @Id
     @GeneratedValue
     int id;
 
     @Column(nullable = false)
-    String date;
+    LocalDateTime startTime;
 
     @Column(nullable = false)
-    String startTime;
-
-    @Column(nullable = false)
-    String endTime;
+    LocalDateTime endTime;
 
     @Column(nullable = false)
     int golfers;
@@ -27,24 +25,17 @@ public class Reservation {
     @Column(nullable = false)
     int amount;
 
-    @Column(nullable = false)
-    int stars;
-
-    @Column(nullable = false)
-    String location;
+    @ManyToOne
+    GolfCourse course;
 
     public Reservation() {
     }
 
-    public Reservation(int id, String date, String startTime, String endTime, int golfers, int amount, int stars, String location) {
-        this.id = id;
-        this.date = date;
+    public Reservation(LocalDateTime startTime, LocalDateTime endTime, int golfers, int amount, GolfCourse course) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.golfers = golfers;
         this.amount = amount;
-        this.stars = stars;
-        this.location = location;
     }
 
     public int getId() {
@@ -55,27 +46,19 @@ public class Reservation {
         this.id = id;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
-    public String getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 
@@ -95,19 +78,11 @@ public class Reservation {
         this.amount = amount;
     }
 
-    public int getStars() {
-        return stars;
+    public GolfCourse getCourse() {
+        return course;
     }
 
-    public void setStars(int stars) {
-        this.stars = stars;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCourse(GolfCourse course) {
+        this.course = course;
     }
 }

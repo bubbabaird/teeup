@@ -1,26 +1,55 @@
 package com.teeup.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.*;
+import java.time.LocalTime;
 
 /**
  * Created by BUBBABAIRD on 5/31/17.
  */
 
+
+/*
+
+{
+    "date": "something",
+    "startTime": "7:30am",
+    "golfers": 4,
+    "amount": 15,
+    "location": "Charlotte"
+}
+
+
+ */
 public class Request {
 
     int id;
     String date;
-    String startTime;
-    String endTime;
+
+    @JsonFormat(pattern = "HH:mm:ss")
+    LocalTime startTime;
+
+    @JsonFormat(pattern = "HH:mm:ss")
+    LocalTime endTime;
+
     int golfers;
     int amount;
     double stars;
-    String location;
+    int miles;
+
+    @JsonFormat(pattern = "")
+    double reqLat;
+
+    @JsonFormat(pattern = "")
+    double reqLong;
 
     public Request() {
     }
 
-    public Request(int id, String date, String startTime, String endTime, int golfers, int amount, double stars, String location) {
+    public Request(String date, LocalTime startTime, LocalTime endTime, int golfers, int amount, double stars, int miles, double reqLat, double reqLong) {
         this.id = id;
         this.date = date;
         this.startTime = startTime;
@@ -28,7 +57,9 @@ public class Request {
         this.golfers = golfers;
         this.amount = amount;
         this.stars = stars;
-        this.location = location;
+        this.miles = miles;
+        this.reqLat = reqLat;
+        this.reqLong = reqLong;
     }
 
     public int getId() {
@@ -47,19 +78,19 @@ public class Request {
         this.date = date;
     }
 
-    public String getStartTime() {
+    public LocalTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(LocalTime startTime) {
         this.startTime = startTime;
     }
 
-    public String getEndTime() {
+    public LocalTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
     }
 
@@ -87,11 +118,27 @@ public class Request {
         this.stars = stars;
     }
 
-    public String getLocation() {
-        return location;
+    public int getMiles() {
+        return miles;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setMiles(int miles) {
+        this.miles = miles;
+    }
+
+    public double getReqLat() {
+        return reqLat;
+    }
+
+    public void setReqLat(double reqLat) {
+        this.reqLat = reqLat;
+    }
+
+    public double getReqLong() {
+        return reqLong;
+    }
+
+    public void setReqLong(double reqLong) {
+        this.reqLong = reqLong;
     }
 }
