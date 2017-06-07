@@ -1,18 +1,24 @@
 <section class="bidForm">
-    <label for="star">Choose Desired Course Star Rating</label>
-    <!--<select id="star" ng-model="star_select">
-        <option value="1">1+ Star Course</option>
-        <option value="2">2+ Star Course</option>
-        <option value="3">3+ Star Course</option>
-        <option value="4">4+ Star Course</option>
-        <option value="5">5+ Star Course</option>
-    </select>-->
-    <star-rating-comp on-click="onRatingChange($event)"></star-rating-comp>
+    
+    <div class="textForm">
+        <label for="star">Choose Desired Course Star Rating</label>
+        
+        <div class="starBox">
+            <star-rating-comp on-click="onRatingChange($event)"></star-rating-comp>
+        </div>
+    </div>
 
-    <label for="start">Window Start</label>
-    <input type="time" id="start" ng-model="start_time">
-    <label for="end">Window End</label>
-    <input type="time" id="end" ng-model="end_time">
+    <div class="windowStart">
+        <label for="start">Window Start</label>
+        <input type="time" id="start" ng-model="start_time">
+    </div>
+
+    <div class="windowEnd">
+        <label for="end">Window End </label>
+        <input type="time" id="end" ng-model="end_time">
+    </div>
+
+    <div class="day">
     <label>
         <input type="radio" name="day" value="today" ng-model="selected_day">
         Today
@@ -21,11 +27,23 @@
         <input type="radio" name="day" value="tomorrow" ng-model="selected_day">
         Tomorrow
     </label>
-    <p>
-        Look for courses within 
-        <input type="number" ng-model="miles">miles 
-        from <input type="text" placeholder="Location" id="locationSearch">
-    </p>
+    </div>
+
+    <div class="courseSearch">
+        <p>
+            <div class="miles">
+                <span>Look for courses within</span>
+                <input type="number" ng-model="miles">
+            </div>
+
+        <span>miles from</span> 
+
+            <div class="loc">
+                <input type="text" placeholder="Location" id="locationSearch">
+            </div>
+        </p>
+    </div>
+
     <label for="golfercount">How many in your Group?</label>
     <select id="golfercount" ng-model="golfer_number">
         <option value="1">1</option>
@@ -36,6 +54,11 @@
     <p>
         $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> /golfer
     </p>
-    <button class="bidBtn" ng-click='submit()' ng-disabled="!valid"><a ui-sref="userDashboard">Place Bid!</a></button>
+    
+    <div class="buttons">
+        <button class="bidBtn" ng-click='submit()' ng-disabled="!valid"><a ui-sref="userDashboard">Place Bid!</a></button>
+        <button class="courseBtn"><a ui-sref="courseview">Course?</a></button>
+    </div>
+
 </section>
 

@@ -1,0 +1,48 @@
+.container {
+    @include grid-row(); 
+
+    .bidForm {
+        @include grid-column(12); 
+        opacity: .78; 
+        }
+
+    .textForm {
+        margin-top: 5%;
+        margin-bottom: 5%; 
+    }
+
+
+.windowStart {
+    @include grid-column(12); 
+    margin-top: 2%; 
+}
+
+.windowEnd {
+    @include grid-column(12); 
+    margin-top: 2%; 
+}
+
+.day {
+    @include grid-column(12); 
+    margin-top: 5%; 
+    margin-bottom: 5%; 
+    text-align: center; 
+}
+
+.courseSearch {
+
+    text-align: center; 
+}
+
+.miles {
+
+    margin-bottom: 5%; 
+    text-align: center; 
+}
+
+.loc {
+    text-align: center; 
+}
+
+}
+
