@@ -27,6 +27,7 @@
         <input type="radio" name="day" value="tomorrow" ng-model="selected_day">
         Tomorrow
     </label>
+
     </div>
 
     <div class="courseSearch">
@@ -44,6 +45,7 @@
         </p>
     </div>
 
+
     <label for="golfercount">How many in your Group?</label>
     <select id="golfercount" ng-model="golfer_number">
         <option value="1">1</option>
@@ -54,11 +56,13 @@
     <p>
         $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> /golfer
     </p>
-    
-    <div class="buttons">
-        <button class="bidBtn" ng-click='submit()' ng-disabled="!valid"><a ui-sref="userDashboard">Place Bid!</a></button>
-        <button class="courseBtn"><a ui-sref="courseview">Course?</a></button>
-    </div>
+
+    <a ui-sref="userDashboard">
+        <button class="bidBtn" ng-click="submit()" ng-disabled="!valid">Place Bid</button>
+    </a>
+
+<button class="courseBtn"><a ui-sref="courseview">Course?</a></button>
+  
 
 </section>
 
