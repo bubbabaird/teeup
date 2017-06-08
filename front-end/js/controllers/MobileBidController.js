@@ -33,6 +33,7 @@ module.exports = {
         };
 
         $scope.updateLocation = function () {
+            console.log($scope.miles);
             BidService.updateBid({
                 miles: $scope.miles,
                 reqLat: $scope.lat,
