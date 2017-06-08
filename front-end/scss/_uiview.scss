@@ -3,46 +3,48 @@
 
     .bidForm {
         @include grid-column(12); 
-        opacity: .78; 
-        }
+        opacity: .8;
+        margin-top: 30px;
+        // border: 1px solid black;
+        background-color: white;
+        color: black; 
+    }
 
     .textForm {
         margin-top: 5%;
         margin-bottom: 5%; 
+        text-align: center;
     }
 
 
-.windowStart {
-    @include grid-column(12); 
-    margin-top: 2%; 
-}
+    .windowStart {
+        @include grid-column(12); 
+        margin-top: 2%; 
+        text-align: center;
+    }
 
-.windowEnd {
-    @include grid-column(12); 
-    margin-top: 2%; 
-}
+    .windowEnd {
+        @include grid-column(12); 
+        margin-top: 2%; 
+        text-align: center;
+    }
 
-.day {
-    @include grid-column(12); 
-    margin-top: 5%; 
-    margin-bottom: 5%; 
-    text-align: center; 
-}
+    .day {
+        @include grid-column(12); 
+        margin-top: 5%; 
+        margin-bottom: 5%; 
+        text-align: center; 
+    }
 
-.courseSearch {
-
-    text-align: center; 
-}
-
-.miles {
-
-    margin-bottom: 5%; 
-    text-align: center; 
-}
-
-.loc {
-    text-align: center; 
-}
-
+    .courseSearch {
+        text-align: center; 
+        .miles {
+            margin-bottom: 5%;
+            text-align: center;
+        }
+        .loc {
+            text-align: center;
+        }
+    }
 }
 

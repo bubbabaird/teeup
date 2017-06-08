@@ -3,20 +3,20 @@ body {
     color: white; 
     background-image: url("http://wallpaper-gallery.net/images/golf-wallpaper-for-iphone/golf-wallpaper-for-iphone-8.jpg");
     background-size: 100%; 
-    // background-size: cover; 
+    background-size: cover; 
     max-width: 100%; 
     overflow-x: hidden; 
     background-repeat: no-repeat; 
     overflow-y: hidden; 
     max-height: 100%; 
-    font-family: 'Raleway', sans-serif;
+    font-family: $primary-font;
     font-weight: bold; 
 }
 
 header {
     @include grid-column(12); 
     width: 100%; 
-    // background-color: #484A4A; 
+    background-color: #484A4A; 
     background-color: gray; 
     opacity: .8; 
     height: 55px; 
@@ -29,7 +29,7 @@ header {
         margin-bottom: 1%; 
         margin-right: 0; 
         font-size: 2em; 
-        font-family: 'Dosis', sans-serif;
+        font-family: $header-font;
     }
 
     img {
