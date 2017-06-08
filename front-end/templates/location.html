@@ -1,12 +1,18 @@
 <section>
     <h2>Step 1: Choose Location</h2>
-    <p>Find A Course...</p>
+    <!--<p>Find A Course...</p>
     <p>within <input type='number' ng-model="miles"> miles</p>
+    <p>of</p>
+    <input type="text" placeholder="Location" id="locationSearch">-->
+    <p>Find A Course...</p>
+    <p>within</p>
+    <input type="range" min="1" max="50" value="10" ng-model="miles">
+    <label for="fader">miles</label>
     <p>of</p>
     <input type="text" placeholder="Location" id="locationSearch">
     <footer>
         <a ui-sref="time">
-            <button>Next: Day & Time</button>
+            <button ng-click="updateLocation()">Next: Day & Time</button>
         </a>
     </footer>
 </section>
