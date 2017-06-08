@@ -28,6 +28,7 @@ const components = [
     require('./components/bidfield'),
     require('./components/userdashboard'),
     require('./components/courseview'),
+    require('./components/location'),
 ]
 
 // loop all components
@@ -53,6 +54,12 @@ app.config(function ($stateProvider) {
         name: 'courseDashboard',
         url: '/courseTools',
         component: 'courseView',
-    })
+    });
+
+    $stateProvider.state({
+        name: 'location',
+        url: '/location',
+        component: 'location',
+    });
 
 })
