@@ -78,3 +78,4 @@ module.exports = {
 
     // $scope.result = BidService.getCourse(); 
 }
+}
