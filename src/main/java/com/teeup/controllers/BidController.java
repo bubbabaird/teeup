@@ -58,6 +58,7 @@ public class BidController {
                 golfCourse.setOpenTime(LocalTime.parse(columns[5]));
                 golfCourse.setCloseTime(LocalTime.parse(columns[6]));
                 golfCourse.setStarRating(Double.valueOf(columns[7]));
+                golfCourse.setImageHero(columns[8]);
 
                 golfCourseRepo.save(golfCourse);
             }
@@ -96,6 +97,28 @@ public class BidController {
         List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findAll();
 
         return courses;
+    }
+    @CrossOrigin
+    @RequestMapping(path = "/courses/{golf_course_id}", method = RequestMethod.PUT)
+    public void updateCourses(@PathVariable("golf_course_id") int course_id, @RequestBody GolfCourse course) {
+
+        GolfCourse thisCourse = golfCourseRepo.findOne(course_id);
+
+        // find the golf course you want (call findOne on the id that was passed in)
+
+        // for each field in GolfCourse, update the object from the database with what's in the requestbody
+        // use the repo to save that new golf course
+        thisCourse.setName(course.getName());
+        thisCourse.setGcLat(course.getGcLat());
+        thisCourse.setGcLong(course.getGcLong());
+        thisCourse.setLocation(course.getLocation());
+        thisCourse.setMinPrice(course.getMinPrice());
+        thisCourse.setOpenTime(course.getOpenTime());
+        thisCourse.setCloseTime(course.getCloseTime());
+        thisCourse.setStarRating(course.getStarRating());
+        thisCourse.setImageHero(course.getImageHero());
+
+        golfCourseRepo.save(thisCourse);
     }
 
     // Make a POST request for all of the bid information
