@@ -28,7 +28,6 @@ public class Reservation {
     int amount;
 
     @ManyToOne
-    @JsonBackReference
     GolfCourse course;
 
     public Reservation() {

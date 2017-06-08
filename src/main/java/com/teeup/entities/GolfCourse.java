@@ -44,6 +44,7 @@ public class GolfCourse {
     String imageHero;
 
     @OneToMany(mappedBy = "course")
+    @JsonBackReference
     List<Reservation> reservations;
 
     public GolfCourse() {
