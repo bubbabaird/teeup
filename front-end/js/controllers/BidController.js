@@ -1,6 +1,8 @@
 module.exports = {
     name: 'BidController',
     func: function ($scope, BidService) {
+
+
         let input = document.getElementById('locationSearch');
         if (input) {
             let options = {
@@ -25,7 +27,7 @@ module.exports = {
         $scope.stars = null;
         $scope.onRatingChange = function ($event) {
             $scope.stars = $event.rating; 
-        };
+
         $scope.bid_amount = null;
         $scope.start_time = null;
         $scope.end_time = null;
@@ -41,7 +43,7 @@ module.exports = {
                 startTime: "10:00:00",
                 endTime: "16:00:00",
                 date: $scope.selected_day,
-                miles: $scope.miles,
+                miles: $scope.miles, 
                 reqLat: $scope.lat,
                 reqLong: $scope.long,
                 golfers: $scope.golfer_number,  
