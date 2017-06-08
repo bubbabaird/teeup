@@ -40,6 +40,9 @@ public class GolfCourse {
     @Column(nullable = false)
     String location;
 
+    @Column(nullable = true)
+    String imageHero;
+
     @OneToMany(mappedBy = "course")
     List<Reservation> reservations;
 
@@ -136,5 +139,13 @@ public class GolfCourse {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getImageHero() {
+        return imageHero;
+    }
+
+    public void setImageHero(String imageHero) {
+        this.imageHero = imageHero;
     }
 }

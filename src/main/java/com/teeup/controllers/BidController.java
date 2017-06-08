@@ -58,6 +58,7 @@ public class BidController {
                 golfCourse.setOpenTime(LocalTime.parse(columns[5]));
                 golfCourse.setCloseTime(LocalTime.parse(columns[6]));
                 golfCourse.setStarRating(Double.valueOf(columns[7]));
+                golfCourse.setImageHero(columns[8]);
 
                 golfCourseRepo.save(golfCourse);
             }
