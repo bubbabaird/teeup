@@ -1,7 +1,10 @@
 package com.teeup.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  * Created by BUBBABAIRD on 5/31/17.
@@ -37,6 +40,9 @@ public class GolfCourse {
     @Column(nullable = false)
     String location;
 
+    @OneToMany(mappedBy = "course")
+    List<Reservation> reservations;
+
     public GolfCourse() {
     }
 
@@ -50,6 +56,14 @@ public class GolfCourse {
         this.gcLat = gcLat;
         this.gcLong = gcLong;
         this.location = location;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 
     public int getId() {

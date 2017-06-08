@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  * Created by BUBBABAIRD on 5/31/17.
@@ -26,13 +26,13 @@ import java.time.LocalTime;
 @RestController
 public class BidController {
     BidService bidService;
-    ReservationRepo ReservationRepo;
+    ReservationRepo reservationRepo;
     UserRepo users;
     GolfCourseRepo golfCourseRepo;
 
     public BidController(BidService bidService, ReservationRepo reservationRepo, UserRepo users, GolfCourseRepo golfCourseRepo) {
         this.bidService = bidService;
-        this.ReservationRepo = reservationRepo;
+        this.reservationRepo = reservationRepo;
         this.users = users;
         this.golfCourseRepo = golfCourseRepo;
     }
@@ -79,6 +79,24 @@ public class BidController {
         }
     }
 
+    // all the reservations that a single golf course has
+    // GET /reservations/1
+    // GET /reservations/2
+    @CrossOrigin
+    @RequestMapping(path = "/reservations/{golf_course_id}", method = RequestMethod.GET)
+    public List<Reservation> courseReservations(@PathVariable("golf_course_id") int courseId) {
+        GolfCourse course = golfCourseRepo.findOne(courseId);
+
+        return course.getReservations();
+    }
+
+    @CrossOrigin
+    @RequestMapping(path = "/courses", method = RequestMethod.GET)
+    public List<GolfCourse> courses() {
+        List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findAll();
+
+        return courses;
+    }
 
     // Make a POST request for all of the bid information
     @CrossOrigin
@@ -87,7 +105,10 @@ public class BidController {
     // make a new method that returns a Reservation
     public Reservation addBid(@RequestBody Request userBid) {
         // return the findAndMakeReservation from bidService and pass in the userBid
-        return bidService.findAndMakeReservation(userBid);
+        Reservation r = bidService.findAndMakeReservation(userBid);
+
+        System.out.println(r.getCourse().getName());
+        return r;
         // figure out a simple algorithm for which golf course to pick
         // based off the details of the request.
 
@@ -112,7 +133,7 @@ public class BidController {
 
 //    @RequestMapping(path = "/bid/{id}", method = RequestMethod.GET)
 //    public Request getBid(@PathVariable("id") int id) {
-//        return ReservationRepo.findOne(id);
+//        return reservationRepo.findOne(id);
 //    }
 
 

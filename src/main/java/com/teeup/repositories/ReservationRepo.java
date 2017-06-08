@@ -12,7 +12,6 @@ import java.util.List;
  * Created by BUBBABAIRD on 6/1/17.
  */
 public interface ReservationRepo extends CrudRepository<Reservation, Integer> {
-
 //    @Query("SELECT * FROM GolfCourses WHERE g.name LIKE ?1%")
 //    List<GolfCourse> findByNameStartsWith(String name);
 }
