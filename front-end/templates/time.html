@@ -1,0 +1,29 @@
+<section>
+    <h2>Step 2: Choose Day & Time</h2>
+    <div class="windowStart">
+        <label for="start">Window Start</label>
+        <input type="time" id="start" ng-model="start_time">
+    </div>
+    <div class="windowEnd">
+        <label for="end">Window End </label>
+        <input type="time" id="end" ng-model="end_time">
+    </div>
+
+    <div class="day">
+        <label>
+            <input type="radio" name="day" value="today" ng-model="selected_day">
+            Today
+        </label>
+        <label>
+            <input type="radio" name="day" value="tomorrow" ng-model="selected_day">
+            Tomorrow
+        </label>
+    </div>
+
+    <footer>
+        <a ui-sref="star">
+            <button>Next: Star Rating</button>
+        </a>
+    </footer>
+
+</section>

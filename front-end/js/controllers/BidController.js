@@ -2,24 +2,26 @@ module.exports = {
     name: 'BidController',
     func: function ($scope, BidService) {
         let input = document.getElementById('locationSearch');
-        let options = {
+        if (input) {
+            let options = {
             types: ['establishment']
-        };
-        let autocomplete = new google.maps.places.Autocomplete(input, options);
+            };
+            let autocomplete = new google.maps.places.Autocomplete(input, options);
       
-        $scope.valid = false;
-        $scope.lat = '';
-        $scope.long = '';
+            $scope.valid = false;
+            $scope.lat = '';
+            $scope.long = '';
 
-        autocomplete.addListener('place_changed', function () {
-            $scope.lat = autocomplete.getPlace().geometry.location.lat();
-            $scope.long = autocomplete.getPlace().geometry.location.lng();
+            autocomplete.addListener('place_changed', function () {
+                $scope.lat = autocomplete.getPlace().geometry.location.lat();
+                $scope.long = autocomplete.getPlace().geometry.location.lng();
         
 
-            $scope.$apply(function () {
+                $scope.$apply(function () {
                 $scope.valid = true;
+                });
             });
-        });
+        }
 
         $scope.stars = null;
         $scope.bid_amount = '';
