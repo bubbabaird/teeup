@@ -29,6 +29,9 @@ const components = [
     require('./components/userdashboard'),
     require('./components/courseview'),
     require('./components/location'),
+    require('./components/time'),
+    require('./components/stars'),
+    require('./components/completebid'),
 ]
 
 // loop all components
@@ -61,5 +64,23 @@ app.config(function ($stateProvider) {
         url: '/location',
         component: 'location',
     });
+
+    $stateProvider.state({
+        name: 'time',
+        url: '/time',
+        component: 'time',
+    })
+
+    $stateProvider.state({
+        name: "star",
+        url: '/stars',
+        component: 'stars',
+    });
+
+    $stateProvider.state({
+        name: 'completebid',
+        url: '/completebid',
+        component: 'completebid',
+    })
 
 })
