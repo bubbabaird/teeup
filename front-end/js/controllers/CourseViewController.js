@@ -17,5 +17,6 @@ module.exports = {
         // $scope.changeStatus = function () {
         //     CourseService.changeStatus();
         // };
+        $scope.teeTime = CourseService.CourseView(); 
     }
 }
