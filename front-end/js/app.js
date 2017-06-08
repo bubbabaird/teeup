@@ -16,6 +16,7 @@ const controllers = [
     require('./controllers/BidController'),
     require('./controllers/UserDashboardController'),
     require('./controllers/CourseViewController'),
+    require('./controllers/MobileBidController'),
 ];
 
 // loop all controllers

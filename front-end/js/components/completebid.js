@@ -2,6 +2,6 @@ module.exports = {
     name: 'completebid',
     array: {
         templateUrl: 'templates/completebid.html',
-        controller: 'BidController',
+        controller: 'MobileBidController',
     }
 }
