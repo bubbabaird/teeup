@@ -52,7 +52,7 @@ app.config(function ($stateProvider) {
     $stateProvider.state({
         name: 'courseDashboard',
         url: '/courseTools',
-        component: 'courseview',
+        component: 'courseView',
     })
 
 })
