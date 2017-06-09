@@ -33,6 +33,7 @@ const components = [
     require('./components/time'),
     require('./components/stars'),
     require('./components/completebid'),
+    require('./components/mobile'),
 ]
 
 // loop all components
@@ -49,15 +50,21 @@ app.config(function ($stateProvider) {
     });
 
     $stateProvider.state({
+        name: 'mobile',
+        url: '/mobile',
+        component: 'mobile',
+    });
+
+    $stateProvider.state({
         name: 'userDashboard',
         url: '/dashboard',
-        component: 'userDashboard'
+        component: 'userDashboard',
     });
 
     $stateProvider.state({
         name: 'courseDashboard',
         url: '/courseTools',
-        component: 'courseView',
+        component: 'courseview',
     });
 
     $stateProvider.state({
@@ -70,7 +77,7 @@ app.config(function ($stateProvider) {
         name: 'time',
         url: '/time',
         component: 'time',
-    })
+    });
 
     $stateProvider.state({
         name: "star",
@@ -82,6 +89,15 @@ app.config(function ($stateProvider) {
         name: 'completebid',
         url: '/completebid',
         component: 'completebid',
-    })
+    });
 
-})
+}).run(function ($state) {
+    // stuff to do when the app first loads
+    const width = window.innerWidth;
+
+    if (width > 400) {
+        $state.go('home');
+    } else {
+        $state.go('mobile');
+    }
+});
