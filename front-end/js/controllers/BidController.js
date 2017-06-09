@@ -1,3 +1,12 @@
+
+function doubleDig(num) {
+    if (num.toString().length == 2) {
+        return num.toString();
+    } else {
+        return '0' + num
+    }
+};
+
 module.exports = {
     name: 'BidController',
     func: function ($scope, BidService) {
@@ -27,6 +36,7 @@ module.exports = {
         $scope.stars = null;
         $scope.onRatingChange = function ($event) {
             $scope.stars = $event.rating; 
+        }
 
         $scope.bid_amount = null;
         $scope.start_time = null;
@@ -37,11 +47,13 @@ module.exports = {
         $scope.golfer_number = null;
 
         $scope.updateBid = function () {
+            console.log($scope.start_time.getHours());
             BidService.updateBid({
                 amount: $scope.bid_amount,
                 stars: $scope.stars,
-                startTime: "10:00:00",
-                endTime: "16:00:00",
+                // API accepts only time format of "XX:XX:XX"
+                startTime: doubleDig($scope.start_time.getHours()) + ':' + doubleDig($scope.start_time.getMinutes()) + ':' + doubleDig($scope.start_time.getSeconds()),
+                endTime: doubleDig($scope.end_time.getHours()) + ':' + doubleDig($scope.end_time.getMinutes()) + ':' + doubleDig($scope.end_time.getSeconds()),
                 date: $scope.selected_day,
                 miles: $scope.miles, 
                 reqLat: $scope.lat,
@@ -50,32 +62,5 @@ module.exports = {
             });
             BidService.submitBid();
         }
-
-
-        // $scope.submit = function () {
-        //     let bid = {
-        //         amount: $scope.bid_amount,
-        //         // stars: $scope.star_select,
-        //         stars: $scope.stars, 
-        //         // startTime: $scope.start_time.getHours() + ':' + $scope.start_time.getMinutes() + ':' + $scope.start_time.getSeconds(),
-        //         // endTime: $scope.end_time.getHours() + ':' + $scope.end_time.getMinutes() + ':' + $scope.end_time.getSeconds(),
-        //         startTime: "10:00:00",
-        //         endTime: "16:00:00",
-        //         date: $scope.selected_day,
-        //         miles: $scope.miles,
-        //         reqLat: $scope.lat,
-        //         reqLong: $scope.long,
-        //         golfers: $scope.golfer_number,
-        //     }
-        //     console.log(bid);
-
-        //     // BidService.getCourse();
-        //     BidService.submitBid(bid);
-        // }
-        // BidService.submitBid($scope.bid_amount);
     }
-
-
-    // $scope.result = BidService.getCourse(); 
-}
 }

@@ -1,3 +1,11 @@
+function doubleDig(num) {
+    if (num.toString().length == 2) {
+        return num.toString();
+    } else {
+        return '0' + num
+    }
+}
+
 module.exports = {
     name: "MobileBidController",
     func: function ($scope, BidService) {
@@ -43,10 +51,8 @@ module.exports = {
 
         $scope.updateTime = function () {
             BidService.updateBid({
-                // startTime: $scope.start_time,
-                startTime: "10:00:00",
-                // endTime: $scope.end_time,
-                endTime: "16:00:00",
+                startTime: doubleDig($scope.start_time.getHours()) + ':' + doubleDig($scope.start_time.getMinutes()) + ':' + doubleDig($scope.start_time.getSeconds()),
+                endTime: doubleDig($scope.end_time.getHours()) + ':' + doubleDig($scope.end_time.getMinutes()) + ':' + doubleDig($scope.end_time.getSeconds()),
                 date: $scope.selected_day,
             });
         };
