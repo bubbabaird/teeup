@@ -7,9 +7,10 @@
         <option value="3">3</option>
         <option value="4">4</option>
     </select>
-    <p>
-        $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> /golfer
-    </p>
+        <p>Price</p>
+        <input id="fader" type="range" min="1" max="100" value="50" ng-model="bid_amount" step="1">
+        <output for="fader" id="amount">$ {{ bid_amount }}</output> 
+        <label for="fader">/golfer</label>
     <footer>
         <a ui-sref="userDashboard">
             <button class="bidBtn" ng-click="updateBid()">Place Bid</button>
