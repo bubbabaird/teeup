@@ -3,7 +3,6 @@
         margin: 0px 10px 0px 10px;
         text-align: center;
         font-weight: bolder;
-
         input {
             padding: 10px;
             border: none;
@@ -11,6 +10,8 @@
             background: transparent;
             color: white;
             outline: none;
+            display: block;
+            margin: 0 auto;
         }
         #searchLabel {
             font-weight: normal;

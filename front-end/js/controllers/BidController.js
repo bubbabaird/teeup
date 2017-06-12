@@ -36,7 +36,7 @@ module.exports = {
         $scope.onRatingChange = function ($event) {
             $scope.stars = $event.rating;
         }
-
+        $scope.error = false;
         $scope.bid_amount = null;
         $scope.start_time = null;
         $scope.end_time = null;
@@ -46,7 +46,6 @@ module.exports = {
         $scope.golfer_number = null;
 
         $scope.updateBid = function () {
-            console.log($scope.start_time.getHours());
             BidService.updateBid({
                 amount: $scope.bid_amount,
                 stars: $scope.stars,
@@ -61,7 +60,9 @@ module.exports = {
             });
             BidService.submitBid().then(function () {
                 $state.go('userDashboard');
-            })
+            }).catch(function () {
+                $scope.error = true;
+            });
 
         }
     }
