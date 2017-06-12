@@ -2,6 +2,7 @@ module.exports = {
     name: 'UserDashboardController',
     func: function ($scope, BidService) {
         $scope.course = BidService.getCourse();
+        console.log($scope.course); 
         initMap($scope.course.gcLat, $scope.course.gcLong);
     },
 
@@ -12,6 +13,7 @@ function initMap(lat, long) {
 
     // let currentCourse = { lat: 35.224149, lng: -80.845362 };
     let currentCourse = { lat: lat, lng: long }; 
+    console.log(currentCourse); 
     let map = new google.maps.Map(document.getElementById('map'), {
         zoom: 11,
         center: currentCourse
