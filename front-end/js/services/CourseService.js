@@ -19,9 +19,7 @@ module.exports = {
                     for (let i = 0; i < response.data.length; i++) {
                         bookings.push(response.data[i]);
                     }
-
-                    })
-                
+                }) 
                 return bookings;
             },
             getRange: function () {
