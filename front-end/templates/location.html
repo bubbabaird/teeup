@@ -1,22 +1,21 @@
-<section>
+<section class='location mobileStyle'>
+    <header>
+        <h1>teeUp</h1>
+    </header>
     <h2>Step 1: Choose Location</h2>
-    <!--<p>Find A Course...</p>
-    <p>within <input type='number' ng-model="miles"> miles</p>
-    <p>of</p>
-    <input type="text" placeholder="Location" id="locationSearch">-->
-
-
-    <p>Find A Course...</p>
-    <p>within</p>
-    <input id="fader" type="range" min="1" max="50" value="25" ng-model="miles" step="1">
-    <output for="fader" id="mileage">{{ miles }}</output>
-    <label for="fader">miles</label>
-    <p>of</p>
-    <input type="text" placeholder="Location" id="locationSearch">
+    <div>
+        <p>Find A Course Within...</p>
+        <input id="fader" type="range" min="1" max="50" value="25" ng-model="miles" step="1">
+        <output for="fader" id="mileage">{{ miles }}</output>
+        <label for="fader">miles</label>
+        <p>of</p>
+        <input type="text" placeholder="" id="locationSearch">
+        <label id="searchLabel">Search from Location</label>
+    </div>
 
     <footer>
         <a ui-sref="time">
-            <button ng-click="updateLocation()">Next: Day & Time</button>
+            <button ng-click="updateLocation()">Next: Day & Time >></button>
         </a>
     </footer>
 </section>

@@ -1,14 +1,12 @@
 .mobile {
-    background-color: #192bc2;
     header {
         margin: 20px 0px 40px 0px;
         text-align: center;
-        color: white;
         img {
-            width: 200px;
+            width: 150px;
         }
         h1 {
-            margin: 0;
+            margin: 5px 0px 0px 0px;
             font-family: $header-font;
         }
         p {
@@ -30,7 +28,6 @@
             height: 50px;
             font-family: $primary-font;
             background-color: #29c566;
-            // background: linear-gradient(60deg, #1Be7ff 0%, #e4ff1a 25%, #ef558d 78%, #f8bc05 100%);
         }
     }
 }

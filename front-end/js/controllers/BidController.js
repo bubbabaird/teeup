@@ -9,7 +9,7 @@ function doubleDig(num) {
 
 module.exports = {
     name: 'BidController',
-    func: function ($scope, BidService) {
+    func: function ($scope, BidService, $state) {
 
         let input = document.getElementById('locationSearch');
         if (input) {
@@ -34,7 +34,7 @@ module.exports = {
         }
         $scope.stars = null;
         $scope.onRatingChange = function ($event) {
-            $scope.stars = $event.rating; 
+            $scope.stars = $event.rating;
         }
 
         $scope.bid_amount = null;
@@ -54,12 +54,15 @@ module.exports = {
                 startTime: doubleDig($scope.start_time.getHours()) + ':' + doubleDig($scope.start_time.getMinutes()) + ':' + doubleDig($scope.start_time.getSeconds()),
                 endTime: doubleDig($scope.end_time.getHours()) + ':' + doubleDig($scope.end_time.getMinutes()) + ':' + doubleDig($scope.end_time.getSeconds()),
                 date: $scope.selected_day,
-                miles: $scope.miles, 
+                miles: $scope.miles,
                 reqLat: $scope.lat,
                 reqLong: $scope.long,
-                golfers: $scope.golfer_number,  
+                golfers: $scope.golfer_number,
             });
-            BidService.submitBid();
+            BidService.submitBid().then(function () {
+                $state.go('userDashboard');
+            })
+
         }
     }
 }
