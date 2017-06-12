@@ -12,7 +12,7 @@ module.exports = {
         let input = document.getElementById('locationSearch');
         if (input) {
             let options = {
-                types: ['establishment']
+                types: ['address']
             };
             let autocomplete = new google.maps.places.Autocomplete(input, options);
             $scope.valid = false;
