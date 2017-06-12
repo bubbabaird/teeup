@@ -81,18 +81,18 @@ public class BidService {
             }
 
 //          Test Code:
-            if (
-                    start.isAfter(g.getOpenTime()) &&
-                    start.isBefore(g.getCloseTime()) &&
-                    end.isAfter(start) &&
-                    end.isBefore(g.getCloseTime()) &&
-                    g.getMinPrice() <= amt &&
-                    g.getStarRating() >= star &&
-                    calculateDistance(g.getGcLat(), g.getGcLong(), bid.getReqLat(), bid.getReqLong()) <= bid.getMiles()
-
-                    ) {
-                return makeReservation(g, bid);
-            }
+//            if (
+//                    start.isAfter(g.getOpenTime()) &&
+//                    start.isBefore(g.getCloseTime()) &&
+//                    end.isAfter(start) &&
+//                    end.isBefore(g.getCloseTime()) &&
+//                    g.getMinPrice() <= amt &&
+//                    g.getStarRating() >= star &&
+//                    calculateDistance(g.getGcLat(), g.getGcLong(), bid.getReqLat(), bid.getReqLong()) <= bid.getMiles()
+//
+//                    ) {
+//                return makeReservation(g, bid);
+//            }
         }
         return null;
     }
