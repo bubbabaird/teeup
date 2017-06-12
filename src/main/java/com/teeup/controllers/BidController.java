@@ -160,29 +160,29 @@ public class BidController {
 //    }
 
 
-    public String index(HttpSession session, Model model, Integer id, String date,
-                       String startTime, String endTime, Integer golfers, Integer amount,
-                       Integer stars, String location) {
-
-        // ask session for a value at the key "user"
-        // set "user" = userName
-        String userName = (String) session.getAttribute("user");
-
-        // ask the database if we have this user
-        User user = users.findFirstByUserName(userName);
-
-        // if we have a "user" add that user to the model
-        if (user != null) {
-            model.addAttribute("user", user);
-        }
-        // given all the data about a bid, create a bid object
-
-
-        // now find the criteria that matches that bid from the database
-
-
-
-        return "home";
-    }
+//    public String index(HttpSession session, Model model, Integer id, String date,
+//                       String startTime, String endTime, Integer golfers, Integer amount,
+//                       Integer stars, String location) {
+//
+//        // ask session for a value at the key "user"
+//        // set "user" = userName
+//        String userName = (String) session.getAttribute("user");
+//
+//        // ask the database if we have this user
+//        User user = users.findFirstByUserName(userName);
+//
+//        // if we have a "user" add that user to the model
+//        if (user != null) {
+//            model.addAttribute("user", user);
+//        }
+//        // given all the data about a bid, create a bid object
+//
+//
+//        // now find the criteria that matches that bid from the database
+//
+//
+//
+//        return "home";
+//    }
 
 }
