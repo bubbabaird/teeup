@@ -40,7 +40,7 @@ public class GolfCourse {
     @Column(nullable = false)
     String location;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     String imageHero;
 
     @OneToMany(mappedBy = "course")
