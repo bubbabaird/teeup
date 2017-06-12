@@ -14,7 +14,7 @@ function initMap(lat, long) {
     let currentCourse = { lat: lat, lng: long }; 
     let map = new google.maps.Map(document.getElementById('map'), {
         zoom: 11,
-        center: currentCourse
+        // center: currentCourse
     });
     let marker = new google.maps.Marker({
         position: currentCourse,

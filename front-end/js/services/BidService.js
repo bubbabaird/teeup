@@ -30,7 +30,6 @@ module.exports = {
             submitBid: function () {
                 console.log(bid);
                 return $http.post('https://pure-peak-13504.herokuapp.com/bid', bid).then(function (response) {
-                    console.log(response);
                     console.log(response.data.course);
                     let result = response.data.course;
                     // if (result === '') {
