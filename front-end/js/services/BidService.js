@@ -4,6 +4,7 @@ module.exports = {
     func: function ($http) {
         
         const course = {
+            image: "https://thewedgegolftour.com/wp-content/uploads/2016/02/TheReserveGolfClub%E2%80%93SouthCourse_500x500.jpg",
             name: null, 
             location: null,
             bid: '40', 
@@ -29,6 +30,9 @@ module.exports = {
                 $http.post('https://pure-peak-13504.herokuapp.com/bid', bid).then(function (response) {
                     console.log(response.data.course);
                     let result = response.data.course;
+                    // if (result === '') {
+
+                    // }
                     course.name = result.name;
                     course.location = result.location;
                     course.rating = result.starRating;

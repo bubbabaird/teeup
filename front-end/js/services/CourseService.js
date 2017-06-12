@@ -14,12 +14,15 @@ module.exports = {
         }
 
         return {
+            // getBookings: function () {
+            //     $http.get('https://pure-peak-13504.herokuapp.com/courses').then(function (response) {
+            //         for (let i = 0; i < response.data.length; i++) {
+            //             bookings.push(response.data[i]);
+            //         }
+            //     }) 
+            //     return bookings;
+            // },
             getBookings: function () {
-                $http.get('https://pure-peak-13504.herokuapp.com/courses').then(function (response) {
-                    for (let i = 0; i < response.data.length; i++) {
-                        bookings.push(response.data[i]);
-                    }
-                }) 
                 return bookings;
             },
             getRange: function () {
