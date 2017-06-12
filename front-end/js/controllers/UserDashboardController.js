@@ -3,7 +3,6 @@ module.exports = {
     func: function ($scope, BidService) {
         $scope.course = BidService.getCourse();
         initMap($scope.course.gcLat, $scope.course.gcLong);
-
     },
 
 }

@@ -7,9 +7,11 @@ $primary-font: "Raleway", sans-serif;
 $header-font: "Dosis", sans-serif; 
 
 @import 'stars'; 
-@import 'mobile';
+@import 'mobileStyle';
+@import 'mobileHome';
 @import 'body'; 
-@import 'userDash'; 
+@import 'time';
+@import 'userDash';
 @import 'location';
 
 // @import 'uiview'; 

@@ -1,22 +1,9 @@
 .location {
-    font-family: $primary-font;
-    header {
-        margin-top: 10px;
-        padding: 0px;
-        text-align: center;
-        h1 {
-            display: inline-block;
-            margin: 0;
-            vertical-align: bottom;
-            font-family: $header-font;
-        }
-    }
-    h2 {
-        text-align: center;
-    }
     div {
         margin: 0px 10px 0px 10px;
         text-align: center;
+        font-weight: bolder;
+
         input {
             padding: 10px;
             border: none;
@@ -25,25 +12,8 @@
             color: white;
             outline: none;
         }
-    }
-    footer {
-        position: absolute;
-        bottom: 0;
-        height: 80px;
-        background-color: #29c566;
-        width: 100%;
-        text-align: right;
-        vertical-align: middle;
-        border-top: 4px solid white;
-        button {
-            margin: 15px 5px 0px 0px;
-            border: 2px solid white;
-            border-radius: 5px;
-            padding: 10px;
-            color: white;
-            font-family: $primary-font;
-            font-weight: bolder;
-            
+        #searchLabel {
+            font-weight: normal;
         }
     }
 }
