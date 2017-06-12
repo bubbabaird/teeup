@@ -8,7 +8,7 @@ function doubleDig(num) {
 
 module.exports = {
     name: "MobileBidController",
-    func: function ($scope, BidService) {
+    func: function ($scope, BidService, $state) {
         let input = document.getElementById('locationSearch');
         if (input) {
             let options = {
@@ -68,7 +68,11 @@ module.exports = {
                 amount: $scope.bid_amount,
                 golfers: $scope.golfer_number,
             });
-            BidService.submitBid()
+            BidService.submitBid().then(function () {
+                $state.go('userDashboard');
+            }).catch(function () {
+                console.log('try again');
+            })
         }
     }
 }

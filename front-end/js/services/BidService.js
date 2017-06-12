@@ -7,8 +7,8 @@ module.exports = {
             image: "https://thewedgegolftour.com/wp-content/uploads/2016/02/TheReserveGolfClub%E2%80%93SouthCourse_500x500.jpg",
             name: null, 
             location: null,
-            bid: '40', 
-            time: '3:00pm',
+            bid: null, 
+            time: null,
             rating: null,
             gcLat: null, 
             gcLong: null, 
@@ -30,16 +30,19 @@ module.exports = {
             submitBid: function () {
                 console.log(bid);
                 return $http.post('https://pure-peak-13504.herokuapp.com/bid', bid).then(function (response) {
-                    console.log(response.data.course);
-                    let result = response.data.course;
-                    // if (result === '') {
-
-                    // }
-                    course.name = result.name;
-                    course.location = result.location;
-                    course.rating = result.starRating;
-                    course.gcLat = result.gcLat; 
-                    course.gcLong = result.gcLong; 
+                    if (response.data === '') {
+                        return Promise.reject();
+                    } else {
+                        console.log(response);
+                        let result = response.data;
+                        course.name = result.course.name;
+                        course.location = result.course.location;
+                        course.bid = result.amount;
+                        course.time = result.startTime;
+                        course.rating = result.course.starRating;
+                        course.gcLat = result.course.gcLat; 
+                        course.gcLong = result.course.gcLong;
+                    } 
                 })
             }, 
 
