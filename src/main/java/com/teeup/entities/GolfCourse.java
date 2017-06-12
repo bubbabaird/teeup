@@ -23,6 +23,9 @@ public class GolfCourse {
     int minPrice;
 
     @Column(nullable = false)
+    int maxPrice;
+
+    @Column(nullable = false)
     LocalTime openTime;
 
     @Column(nullable = false)
@@ -43,6 +46,9 @@ public class GolfCourse {
     @Column(nullable = false)
     String imageHero;
 
+    @Column(nullable = false)
+    boolean enabled;
+
     @OneToMany(mappedBy = "course")
     @JsonBackReference
     List<Reservation> reservations;
@@ -50,10 +56,11 @@ public class GolfCourse {
     public GolfCourse() {
     }
 
-    public GolfCourse(int id, String name, int minPrice, LocalTime openTime, LocalTime closeTime, double starRating, double gcLat, double gcLong, String location, String imageHero) {
+    public GolfCourse(int id, String name, int minPrice, int maxPrice, LocalTime openTime, LocalTime closeTime, double starRating, double gcLat, double gcLong, String location, String imageHero, boolean enabled) {
         this.id = id;
         this.name = name;
         this.minPrice = minPrice;
+        this.maxPrice = maxPrice;
         this.openTime = openTime;
         this.closeTime = closeTime;
         this.starRating = starRating;
@@ -61,6 +68,7 @@ public class GolfCourse {
         this.gcLong = gcLong;
         this.location = location;
         this.imageHero = imageHero;
+        this.enabled = enabled;
     }
 
     public List<Reservation> getReservations() {
@@ -93,6 +101,14 @@ public class GolfCourse {
 
     public void setMinPrice(int minPrice) {
         this.minPrice = minPrice;
+    }
+
+    public int getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(int maxPrice) {
+        this.maxPrice = maxPrice;
     }
 
     public LocalTime getOpenTime() {
@@ -149,5 +165,13 @@ public class GolfCourse {
 
     public void setImageHero(String imageHero) {
         this.imageHero = imageHero;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

@@ -1,0 +1,20 @@
+<section>
+    <h2>Step 4: Complete Bid</h2>
+    <label for="golfercount">How many in your Group?</label>
+    <select id="golfercount" ng-model="golfer_number">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+        <p>Price</p>
+        <input id="fader" type="range" min="1" max="100" value="50" ng-model="bid_amount" step="1">
+        <output for="fader" id="amount">$ {{ bid_amount }}</output> 
+        <label for="fader">/golfer</label>
+    <footer>
+        <a ui-sref="userDashboard">
+            <button class="bidBtn" ng-click="updateBid()">Place Bid</button>
+        </a>
+    </footer>
+    
+</section>

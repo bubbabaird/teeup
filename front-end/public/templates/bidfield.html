@@ -1,0 +1,69 @@
+<section class="bidForm">
+    
+    <div class="textForm">
+        <label for="star">Choose Desired Course Star Rating</label>
+        
+        <div class="starBox">
+            <star-rating-comp on-click="onRatingChange($event)"></star-rating-comp>
+        </div>
+    </div>
+
+    <div class="windowStart">
+        <label for="start">Window Start</label>
+        <input type="time" id="start" ng-model="start_time">
+    </div>
+
+    <div class="windowEnd">
+        <label for="end">Window End </label>
+        <input type="time" id="end" ng-model="end_time">
+    </div>
+
+    <div class="day">
+    <label>
+        <input type="radio" name="day" value="today" ng-model="selected_day">
+        Today
+    </label>
+    <label>
+        <input type="radio" name="day" value="tomorrow" ng-model="selected_day">
+        Tomorrow
+    </label>
+
+    </div>
+
+    <div class="courseSearch">
+        <p>
+            <div class="miles">
+                <span>Look for courses within</span>
+                <input type="number" ng-model="miles">
+            </div>
+
+        <span>miles from</span> 
+
+            <div class="loc">
+                <input type="text" placeholder="Location" id="locationSearch">
+            </div>
+        </p>
+    </div>
+
+
+    <label for="golfercount">How many in your Group?</label>
+    <select id="golfercount" ng-model="golfer_number">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <p>
+        $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> /golfer
+    </p>
+
+    <a ui-sref="userDashboard">
+        <button class="bidBtn" ng-click="updateBid()" ng-disabled="!valid">Place Bid</button>
+    </a>
+
+<a ui-sref="courseDashboard">
+<button class="courseBtn">Course?</button>
+  </a>
+
+</section>
+

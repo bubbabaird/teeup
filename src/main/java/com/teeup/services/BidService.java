@@ -5,14 +5,12 @@ import com.teeup.entities.Request;
 import com.teeup.entities.Reservation;
 import com.teeup.repositories.GolfCourseRepo;
 import com.teeup.repositories.ReservationRepo;
-import org.aspectj.weaver.ast.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,6 +54,9 @@ public class BidService {
             // if so, print "success!" and break out of the loop.
 
             if (
+                // if the golf course is available via killAll boolean
+                g.isEnabled() == true &&
+
                 // if the bid starttime starts after the opentime AND
                 start.isAfter(g.getOpenTime()) &&
 
@@ -68,8 +69,11 @@ public class BidService {
                 // if the bid endtime ends before the closetime
                 end.isBefore(g.getCloseTime()) &&
 
-                // if the amt is less than the bid amt
+                // if the bid amount is greater than or equal to the min golf course price
                 g.getMinPrice() <= amt &&
+
+                // if the bid amount is less than or equal to the max golf course price
+                g.getMaxPrice() >= amt &&
 
                 // if the star rating is greater than the bid star rating
                 g.getStarRating() >= star &&

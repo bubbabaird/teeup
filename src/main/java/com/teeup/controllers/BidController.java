@@ -4,16 +4,13 @@ import com.opencsv.CSVReader;
 import com.teeup.entities.GolfCourse;
 import com.teeup.entities.Request;
 import com.teeup.entities.Reservation;
-import com.teeup.entities.User;
 import com.teeup.repositories.GolfCourseRepo;
 import com.teeup.repositories.ReservationRepo;
 import com.teeup.repositories.UserRepo;
 import com.teeup.services.BidService;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -55,10 +52,12 @@ public class BidController {
                 golfCourse.setGcLong(Double.valueOf(columns[2]));
                 golfCourse.setLocation(columns[3]);
                 golfCourse.setMinPrice(Integer.valueOf(columns[4]));
-                golfCourse.setOpenTime(LocalTime.parse(columns[5]));
-                golfCourse.setCloseTime(LocalTime.parse(columns[6]));
-                golfCourse.setStarRating(Double.valueOf(columns[7]));
-                golfCourse.setImageHero(columns[8]);
+                golfCourse.setMaxPrice(Integer.valueOf(columns[5]));
+                golfCourse.setOpenTime(LocalTime.parse(columns[6]));
+                golfCourse.setCloseTime(LocalTime.parse(columns[7]));
+                golfCourse.setStarRating(Double.valueOf(columns[8]));
+                golfCourse.setImageHero(columns[9]);
+                golfCourse.setEnabled(Boolean.valueOf(columns[10]));
 
                 golfCourseRepo.save(golfCourse);
             }
@@ -113,10 +112,12 @@ public class BidController {
         thisCourse.setGcLong(course.getGcLong());
         thisCourse.setLocation(course.getLocation());
         thisCourse.setMinPrice(course.getMinPrice());
+        thisCourse.setMaxPrice(course.getMaxPrice());
         thisCourse.setOpenTime(course.getOpenTime());
         thisCourse.setCloseTime(course.getCloseTime());
         thisCourse.setStarRating(course.getStarRating());
         thisCourse.setImageHero(course.getImageHero());
+        thisCourse.setEnabled(course.isEnabled());
 
         golfCourseRepo.save(thisCourse);
     }
@@ -130,7 +131,10 @@ public class BidController {
         // return the findAndMakeReservation from bidService and pass in the userBid
         Reservation r = bidService.findAndMakeReservation(userBid);
 
-        System.out.println(r.getCourse().getName());
+        if (r != null) {
+            System.out.println(r.getCourse().getName());
+        }
+
         return r;
         // figure out a simple algorithm for which golf course to pick
         // based off the details of the request.

@@ -1,0 +1,18 @@
+<section class="courseView">
+        <ul>
+            <li ng-repeat="booking in bookings">
+                <p>{{booking.teeTime}}</p>
+                <p>{{booking.golfers}}</p>
+                <p>{{booking.id}}</p>
+            </li>
+        </ul> 
+        <div>
+            <h3>Current Range: ${{range.min}} to ${{range.max}}</h3>
+            <p><input type="number" placeholder="Min" ng-model="min_bid"> to <input type="number" placeholder="Max" ng-model="max_bid"></p>
+            <button ng-click="changeRange()">Update Acceptable Range</button>
+        </div>
+        <!--<div>
+            <h3>Current Status: Accepting Bookings</h3>
+            <button ng-click="changeStatus()">Change Status</button>
+        </div>-->
+</section>
