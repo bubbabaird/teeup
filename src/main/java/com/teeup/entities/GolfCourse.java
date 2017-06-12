@@ -50,7 +50,7 @@ public class GolfCourse {
     public GolfCourse() {
     }
 
-    public GolfCourse(int id, String name, int minPrice, LocalTime openTime, LocalTime closeTime, double starRating, double gcLat, double gcLong, String location) {
+    public GolfCourse(int id, String name, int minPrice, LocalTime openTime, LocalTime closeTime, double starRating, double gcLat, double gcLong, String location, String imageHero) {
         this.id = id;
         this.name = name;
         this.minPrice = minPrice;
@@ -60,6 +60,7 @@ public class GolfCourse {
         this.gcLat = gcLat;
         this.gcLong = gcLong;
         this.location = location;
+        this.imageHero = imageHero;
     }
 
     public List<Reservation> getReservations() {

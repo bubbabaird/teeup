@@ -29,7 +29,12 @@ module.exports = {
         return {
             submitBid: function () {
                 console.log(bid);
+<<<<<<< HEAD
                 return $http.post('https://pure-peak-13504.herokuapp.com/bid', bid).then(function (response) {
+=======
+                $http.post('https://pure-peak-13504.herokuapp.com/bid', bid).then(function (response) {
+                    console.log(response);
+>>>>>>> 80d92dcf11a7796ae82f1bca84a1393c81140841
                     console.log(response.data.course);
                     let result = response.data.course;
                     // if (result === '') {
