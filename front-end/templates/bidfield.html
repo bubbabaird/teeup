@@ -1,5 +1,8 @@
 <section class="bidForm">
     
+    <div class="error" ng-show="error">
+        <h3>No Courses Match Criteria. Take a Mulligan and Try Again!</h3>
+    </div>
     <div class="textForm">
         <label for="star">Choose Desired Course Star Rating</label>
         
@@ -57,13 +60,11 @@
         $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> /golfer
     </p>
 
-    <!--<a ui-sref="userDashboard">-->
-        <button class="bidBtn" ng-click="updateBid()" ng-disabled="!valid">Place Bid</button>
-    <!--</a>-->
+    <button class="bidBtn" ng-click="updateBid()" ng-disabled="!valid">Place Bid</button>
 
-<a ui-sref="courseDashboard">
-<button class="courseBtn">Course?</button>
-  </a>
+    <a ui-sref="courseDashboard">
+        <button class="courseBtn">Course?</button>
+    </a>
 
 </section>
 
