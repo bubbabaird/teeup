@@ -1,15 +1,15 @@
-<section class="mobileStyle">
+<section class="starSelect mobileStyle">
     <header>
         <h1>teeUp</h1>
     </header>
     <h2>Step 3: Choose Star Rating</h2>
-    <p>Select your Minimum Acceptable Course Rating</p>
+    <p>Select Minimum Course Rating!</p>
     <div class="starBox">
-        <star-rating-comp on-click="onRatingChange($event)"></star-rating-comp>
+        <star-rating-comp size="'large'" on-click="onRatingChange($event)"></star-rating-comp>
     </div>
     <footer>
         <a ui-sref="completebid">
-            <button ng-click="updateStars()">Next: Complete Bid</button>
+            <button ng-click="updateStars()">Next: Complete Bid >></button>
         </a>
     </footer>
 </section>
