@@ -1,5 +1,50 @@
 .bidForm {
+    @include grid-row();
+    background-color: white;
+    color: black;
+    font-family: $primary-font;
     .error {
         background-color: red;
+    }
+    .header {
+        @include grid-column(12);
+        background-color: #3f99de;
+        .appName {
+            color: white;
+            font-size: 2em; 
+            font-family: $header-font;
+            margin-top: 0;
+        }
+    }
+    .textForm {
+        margin-top: 5%;
+        margin-bottom: 5%; 
+        text-align: center;
+    }
+    .windowStart {
+        @include grid-column(12); 
+        margin-top: 2%; 
+        text-align: center;
+    }
+    .windowEnd {
+        @include grid-column(12); 
+        margin-top: 2%; 
+        text-align: center;
+    }
+    .day {
+        @include grid-column(12); 
+        margin-top: 5%; 
+        margin-bottom: 5%; 
+        text-align: center;
+    }
+    .courseSearch {
+        text-align: center;
+        .miles {
+            margin-bottom: 5%;
+            text-align: center;
+        }
+        .loc {
+            text-align: center;
+        }
     }
 }
