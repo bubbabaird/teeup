@@ -90,15 +90,14 @@ app.config(function ($stateProvider) {
         url: '/completebid',
         component: 'completebid',
     });
-
-});
-// }).run(function ($state) {
-//     // stuff to do when the app first loads
-//     const width = window.innerWidth;
-
-//     if (width > 400) {
-//         $state.go('home');
-//     } else {
-//         $state.go('mobile');
-//     }
 // });
+}).run(function ($state) {
+    // stuff to do when the app first loads
+    const width = window.innerWidth;
+
+    if (width > 400) {
+        $state.go('home');
+    } else {
+        $state.go('mobile');
+    }
+});
