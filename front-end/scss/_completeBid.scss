@@ -1,0 +1,47 @@
+.completeBid {
+    .golfer {
+        text-align: center;
+        select {
+            width: 25%;
+        }
+    }
+    .price {
+        text-align: center;
+        @include grid-row();
+        .descrip {
+            @include grid-column(12);
+        }
+        input {
+            @include grid-column-offset(3);
+            @include grid-column(6);
+        }
+        div {
+            @include grid-column(12);
+            margin-top: 30px;
+            .bidReadout {
+                font-size: 1.3em;
+                font-weight: bolder;
+            }
+        }
+    }
+    .reject {
+        text-align: center;
+        margin-top: 80px;
+        h3 {
+            margin: 10px 30px 10px 30px;
+        }
+        button {
+            color: white;
+            font-weight: bolder;
+            font-size: 1.2em;
+            margin-top: 20px;
+            border: 1px solid white;
+            border-radius: 50px;
+            width: 60%;
+            text-align: center;
+            height: 50px;
+            font-family: $primary-font;
+            background-color: #29c566;
+        }
+    }
+}

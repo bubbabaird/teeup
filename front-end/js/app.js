@@ -92,7 +92,7 @@ app.config(function ($stateProvider) {
     });
 // });
 }).run(function ($state) {
-    // stuff to do when the app first loads
+    // checks screen size, and directs to appropriate home page view
     const width = window.innerWidth;
 
     if (width > 400) {
