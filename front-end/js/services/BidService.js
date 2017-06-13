@@ -4,7 +4,7 @@ module.exports = {
     func: function ($http) {
         
         const course = {
-            image: "https://thewedgegolftour.com/wp-content/uploads/2016/02/TheReserveGolfClub%E2%80%93SouthCourse_500x500.jpg",
+            image: null,
             name: null, 
             location: null,
             bid: null, 
@@ -42,6 +42,7 @@ module.exports = {
                         course.rating = result.course.starRating;
                         course.gcLat = result.course.gcLat; 
                         course.gcLong = result.course.gcLong;
+                        course.image = result.course.imageHero;
                     } 
                 })
             }, 
