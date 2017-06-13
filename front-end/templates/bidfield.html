@@ -1,5 +1,10 @@
 <section class="bidForm">
-    
+
+
+    <div class="header">
+        <h1 class="appName">teeUp<h1>
+    </div>
+
     <div class="error" ng-show="error">
         <h3>No Courses Match Criteria. Take a Mulligan and Try Again!</h3>
     </div>
@@ -37,7 +42,7 @@
         <p>
             <div class="miles">
                 <span>Look for courses within</span>
-                <input type="number" ng-model="miles">
+                <input type="number" placeholder="Miles" ng-model="miles">
             </div>
 
         <span>miles from</span> 
@@ -65,6 +70,8 @@
     <a ui-sref="courseDashboard">
         <button class="courseBtn">Course?</button>
     </a>
+
+<popular></popular>
 
 </section>
 

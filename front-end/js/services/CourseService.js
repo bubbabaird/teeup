@@ -13,6 +13,8 @@ module.exports = {
             max: 45,
         }
 
+
+
         return {
             getBookings: function () {
                 $http.get('https://pure-peak-13504.herokuapp.com/reservations/' + 77).then(function (response) {
@@ -31,6 +33,12 @@ module.exports = {
             setRange: function (req) {
                 console.log(req);
             },
+
+            getPopCourse: function () {
+                return $http.get('https://pure-peak-13504.herokuapp.com/courses').then(function (response) {
+                    return response.data[0]; 
+                })
+            }
 
         }
     }

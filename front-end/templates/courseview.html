@@ -1,10 +1,14 @@
 <section class="courseView">
-        
+
+        <div>
+            <h1>The Tradition Golf Course</h1>
+        </div>
         <ul>
             <li ng-repeat="booking in bookings">
-                <p>{{booking.course.name}}</p>
-                <p>{{booking.golfers}}</p>
-                <p>{{booking.startTime}}</p>
+                <!--<p>{{booking.course.name}}</p>-->
+                <p>Tee Time: {{booking.startTime}}</p>
+                <p>Number of Golfers: {{booking.golfers}}</p>
+
             </li>
         </ul> 
         <div>
