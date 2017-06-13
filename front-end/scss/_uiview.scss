@@ -1,17 +1,35 @@
+
 .container {
     @include grid-row(); 
 
     .bidForm {
         @include grid-column(12); 
-        opacity: .8;
-        margin-top: 30px;
+        // opacity: .8;
+        // margin-top: 30px;
         // border: 1px solid black;
         background-color: white;
         color: black; 
+        font-family: $primary-font;
+    }
+
+    .header {
+    @include grid-column(12); 
+    background-color: #194BFF;
+
+    }
+    .appName {
+        
+        // width: 100%; 
+        // @include grid-column(12); 
+        // background-color: #194BFF;
+        color: white; 
+        font-size: 2em; 
+        font-family: $header-font;
+        margin-top: 0; 
     }
 
     .textForm {
-        margin-top: 5%;
+        // margin-top: 5%;
         margin-bottom: 5%; 
         text-align: center;
     }
@@ -46,5 +64,28 @@
             text-align: center;
         }
     }
+
+        // .popular {
+        //     @include grid-column(12); 
+        //     border: 1px solid #194BFF; 
+        //     background-color: #194BFF;
+        //     position: fixed;
+        //     bottom: 0px;
+        //     height: 200px; 
+        //     left:0px;
+
+        //     ul{
+        //         list-style: none;
+        //     }
+            
+            // .courses {
+            //     @include grid-column(3);
+            //     border: 1px solid black;  
+            //     background-color: white;
+            //     margin-bottom: 20%; 
+            
+            // }
+        //}
+
 }
 

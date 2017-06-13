@@ -17,6 +17,7 @@ const controllers = [
     require('./controllers/UserDashboardController'),
     require('./controllers/CourseViewController'),
     require('./controllers/MobileBidController'),
+    require('./controllers/PopularController'),
 ];
 
 // loop all controllers
@@ -34,6 +35,8 @@ const components = [
     require('./components/stars'),
     require('./components/completebid'),
     require('./components/mobile'),
+    require('./components/popular'),
+    
 ]
 
 // loop all components
@@ -90,6 +93,13 @@ app.config(function ($stateProvider) {
         url: '/completebid',
         component: 'completebid',
     });
+
+    $stateProvider.state({
+        name: 'popular',
+        url: '/popular',
+        component: 'popular',
+    });
+
 // });
 }).run(function ($state) {
     // stuff to do when the app first loads
