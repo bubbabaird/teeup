@@ -1,21 +1,27 @@
 <section class="courseView">
 
-        <div>
+    <header class="header">
+        <img src="assets/teeup_logo.png">
+    </header>
+
+    <div class="listBox">
+        <div class="courseTitle">
             <h1>The Tradition Golf Course</h1>
         </div>
-        <ul>
-            <li ng-repeat="booking in bookings">
-                <!--<p>{{booking.course.name}}</p>-->
-                <p>Tee Time: {{booking.startTime}}</p>
-                <p>Number of Golfers: {{booking.golfers}}</p>
-
-            </li>
+        
+        <div class="list">
+        <ul ng-repeat="booking in bookings">
+            <p><span class="label"> Time: </span> {{booking.startTime}}</p>
+            <p><span class="label"> Number of Golfers: </span> {{booking.golfers}}</p>
         </ul> 
+        </div>
+
         <div>
             <h3>Current Range: ${{range.min}} to ${{range.max}}</h3>
             <p><input type="number" placeholder="Min" ng-model="min_bid"> to <input type="number" placeholder="Max" ng-model="max_bid"></p>
             <button ng-click="changeRange()">Update Acceptable Range</button>
         </div>
+    </div>
         <!--<div>
             <h3>Current Status: Accepting Bookings</h3>
             <button ng-click="changeStatus()">Change Status</button>

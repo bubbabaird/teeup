@@ -1,0 +1,28 @@
+.courseView {
+        .header {
+            @include grid-column(12);
+            background-color: #3f99de;
+            color: white; 
+            font-family: $header-font;
+            text-align: center; 
+
+            img {
+                width: 150px; 
+            }
+        }
+
+    .listBox {
+        background-color: white; 
+        color: black; 
+    }
+
+    .courseTitle {
+        @include grid-column(12); 
+        text-align: center; 
+    }
+
+    .label {
+        font-weight: bold; 
+    }
+
+}
