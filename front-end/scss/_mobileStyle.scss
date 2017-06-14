@@ -4,11 +4,13 @@
         margin-top: 10px;
         padding: 0px;
         text-align: center;
+        .logo {
+            width: 150px;
+        }
         h1 {
             display: inline-block;
             margin: 0;
             vertical-align: bottom;
-            font-family: $header-font;
         }
     }
     h2 {

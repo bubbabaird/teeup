@@ -6,6 +6,7 @@ import com.teeup.entities.Reservation;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -14,4 +15,5 @@ import java.util.List;
 public interface ReservationRepo extends CrudRepository<Reservation, Integer> {
 //    @Query("SELECT * FROM GolfCourses WHERE g.name LIKE ?1%")
 //    List<GolfCourse> findBy(String name);
+    List<Reservation> findByGolfCourseAndStartTimeAfter(GolfCourse g, LocalDateTime start);
 }

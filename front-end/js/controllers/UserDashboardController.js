@@ -2,8 +2,20 @@ module.exports = {
     name: 'UserDashboardController',
     func: function ($scope, BidService) {
         $scope.course = BidService.getCourse();
-        console.log($scope.course); 
+        // $scope.course = {
+        //     name: 'The Tradition Golf Club',
+        //     image: 'http://i.imgur.com/cNBlSf8.jpg',
+        //     location: '1212 Boogie Woogie Avenue, Charlotte, NC 29220',
+        //     rating: '4.2',
+        //     bid: '$69',
+        //     time: '4:00pm'
+
+        // }
         initMap($scope.course.gcLat, $scope.course.gcLong);
+        $scope.mapShow = true;
+        $scope.showMap = function () {
+            $scope.mapShow = false;
+        };
     },
 }
 
