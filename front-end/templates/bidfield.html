@@ -18,14 +18,16 @@
         </div>
     </div>
 
+<div class="windows">
     <div class="windowStart">
         <label for="start">Window Start</label>
         <input type="time" id="start" ng-model="start_time">
     </div>
 
     <div class="windowEnd">
-        <label for="end">Window End </label>
+        <label for="end">Window End</label>
         <input type="time" id="end" ng-model="end_time">
+    </div>
     </div>
 
     <div class="day">
@@ -54,23 +56,29 @@
         </p>
     </div>
 
-
+    <div class="golferNum">
     <label for="golfercount">How many in your Group?</label>
-    <select id="golfercount" ng-model="golfer_number">
+    <select id="golfercount" value=""number data-default ng-model="golfer_number">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
     </select>
+    </div>
+    
+    <div class="bidNum">
     <p>
-        $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> /golfer
+        $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> / golfer
     </p>
+    </div>
 
+<div class="buttons">
     <button class="bidBtn" ng-click="updateBid()" ng-disabled="!valid">Place Bid</button>
 
     <a ui-sref="courseDashboard">
         <button class="courseBtn">Course?</button>
     </a>
+</div>
 
 <popular></popular>
 
