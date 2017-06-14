@@ -9,21 +9,29 @@
     .header {
         @include grid-column(12);
         background-color: #3f99de;
-        .appName {
-            color: white;
-            font-size: 2em; 
-            font-family: $header-font;
-            margin-top: 0;
+        color: white; 
+        font-family: $header-font;
+        text-align: center; 
+
+        img {
+            width: 150px; 
         }
+
+        // .appName {
+        //     color: white;
+        //     font-size: 2em; 
+        //     font-family: $header-font;
+        //     margin-top: 0;
+        // }
     }
     .textForm {
-        margin-top: 5%;
-        margin-bottom: 5%; 
+        margin-top: 2%;
+        margin-bottom: 2%; 
         text-align: center;
     }
     .windowStart {
         @include grid-column(12); 
-        margin-top: 2%; 
+        margin-top: 1%; 
         text-align: center;
     }
     .windowEnd {
@@ -33,14 +41,14 @@
     }
     .day {
         @include grid-column(12); 
-        margin-top: 5%; 
-        margin-bottom: 5%; 
+        margin-top: 2%; 
+        margin-bottom: 2%; 
         text-align: center;
     }
     .courseSearch {
         text-align: center;
+
         .miles {
-            margin-bottom: 5%;
             text-align: center;
         }
         .loc {
@@ -48,3 +56,24 @@
         }
     }
 }
+
+// .location {
+//     div {
+//         margin: 0px 10px 0px 10px;
+//         text-align: center;
+//         font-weight: bolder;
+//         input {
+//             padding: 10px;
+//             border: none;
+//             border-bottom: solid 2px white;
+//             background: transparent;
+//             color: white;
+//             outline: none;
+//             display: block;
+//             margin: 0 auto;
+//         }
+//         #searchLabel {
+//             font-weight: normal;
+//         }
+//     }
+// }
