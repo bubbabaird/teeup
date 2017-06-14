@@ -14,6 +14,7 @@ import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -82,21 +83,41 @@ public class BidController {
     // all the reservations that a single golf course has
     // GET /reservations/1
     // GET /reservations/2
+
+/*
+* GET
+* find ONE golf course that matches criteria and send back a reservation
+*
+* */
     @CrossOrigin
     @RequestMapping(path = "/reservations/{golf_course_id}", method = RequestMethod.GET)
     public List<Reservation> courseReservations(@PathVariable("golf_course_id") int courseId) {
+        // in order to find all the reservations for a golf course, we first need the course:
         GolfCourse course = golfCourseRepo.findOne(courseId);
 
-        return course.getReservations();
-    }
+        // ask our reservation repository: give me all the reservations filtered by THIS golf course,
+        // starting after NOW.
+        List<Reservation> reservations = reservationRepo.findByGolfCourseAndStartTimeAfter(course, LocalDateTime.now());
 
+        return reservations;
+    }
+/*
+* GET
+* a list of all golf courses
+*
+* */
     @CrossOrigin
     @RequestMapping(path = "/courses", method = RequestMethod.GET)
     public List<GolfCourse> courses() {
-        List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findAll();
+//        List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findByGolfCourseAndStartTimeAfter(, LocalDateTime);
 
-        return courses;
+        return (List)golfCourseRepo.findAll();
     }
+/*
+* PUT
+* an update on any updated golf course information
+*
+* */
     @CrossOrigin
     @RequestMapping(path = "/courses/{golf_course_id}", method = RequestMethod.PUT)
     public void updateCourses(@PathVariable("golf_course_id") int course_id, @RequestBody GolfCourse course) {
