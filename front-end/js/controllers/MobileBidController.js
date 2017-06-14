@@ -28,6 +28,8 @@ module.exports = {
             });
         }
         
+        $scope.bidAllow = true;
+        $scope.reject = false;
         $scope.stars = null;
         $scope.bid_amount = null;
         $scope.start_time = null;
@@ -41,7 +43,6 @@ module.exports = {
         };
 
         $scope.updateLocation = function () {
-            console.log($scope.miles);
             BidService.updateBid({
                 miles: $scope.miles,
                 reqLat: $scope.lat,
@@ -71,7 +72,9 @@ module.exports = {
             BidService.submitBid().then(function () {
                 $state.go('userDashboard');
             }).catch(function () {
-                console.log('try again');
+                $scope.reject = true;
+                $scope.bidAllow = false;
+                
             })
         }
     }

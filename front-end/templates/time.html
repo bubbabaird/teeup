@@ -3,15 +3,7 @@
         <h1>teeUp</h1>
     </header>
     <h2>Step 2: Choose Day & Time</h2>
-    <div class="windowStart">
-        <label for="start">Window Start</label>
-        <input type="time" id="start" ng-model="start_time">
-    </div>
-    <div class="windowEnd">
-        <label for="end">Window End </label>
-        <input type="time" id="end" ng-model="end_time">
-    </div>
-
+    <h4>Find a time...</h4>
     <div class="day">
         <label>
             <input type="radio" name="day" value="today" ng-model="selected_day">
@@ -22,7 +14,16 @@
             Tomorrow
         </label>
     </div>
-
+    <h4>Between...</h4>
+    <div class="windowStart window">
+        <!--<label for="start">Window Start</label>-->
+        <input type="time" class="timeInput" id="start" ng-model="start_time">
+    </div>
+    <h1 id="ampersand">&</h1>
+    <div class="windowEnd window">
+        <!--<label for="end">Window End </label>-->
+        <input type="time" class="timeInput" id="end" ng-model="end_time">
+    </div>
     <footer>
         <a ui-sref="star">
             <button ng-click="updateTime()">Next: Star Rating >></button>

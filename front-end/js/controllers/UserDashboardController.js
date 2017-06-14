@@ -5,9 +5,7 @@ module.exports = {
         console.log($scope.course); 
         initMap($scope.course.gcLat, $scope.course.gcLong);
     },
-
 }
-
 
 function initMap(lat, long) {
 

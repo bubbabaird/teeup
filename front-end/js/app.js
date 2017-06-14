@@ -17,6 +17,7 @@ const controllers = [
     require('./controllers/UserDashboardController'),
     require('./controllers/CourseViewController'),
     require('./controllers/MobileBidController'),
+    require('./controllers/PopularController'),
 ];
 
 // loop all controllers
@@ -34,6 +35,8 @@ const components = [
     require('./components/stars'),
     require('./components/completebid'),
     require('./components/mobile'),
+    require('./components/popular'),
+    
 ]
 
 // loop all components
@@ -91,14 +94,20 @@ app.config(function ($stateProvider) {
         component: 'completebid',
     });
 
-});
-// }).run(function ($state) {
-//     // stuff to do when the app first loads
-//     const width = window.innerWidth;
+    $stateProvider.state({
+        name: 'popular',
+        url: '/popular',
+        component: 'popular',
+    });
 
-//     if (width > 400) {
-//         $state.go('home');
-//     } else {
-//         $state.go('mobile');
-//     }
 // });
+}).run(function ($state) {
+    // checks screen size, and directs to appropriate home page view
+    const width = window.innerWidth;
+
+    if (width > 400) {
+        $state.go('home');
+    } else {
+        $state.go('mobile');
+    }
+});

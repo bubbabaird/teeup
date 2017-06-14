@@ -3,18 +3,13 @@
         margin: 0px 10px 0px 10px;
         text-align: center;
         font-weight: bolder;
-        input {
+        #locationSearch {
             padding: 10px;
-            border: none;
-            border-bottom: solid 2px white;
-            background: transparent;
-            color: white;
+            font-family: $primary-font;
+            border: solid 2px white;
             outline: none;
             display: block;
             margin: 0 auto;
-        }
-        #searchLabel {
-            font-weight: normal;
         }
     }
 }

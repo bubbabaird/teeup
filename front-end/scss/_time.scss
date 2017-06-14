@@ -1,0 +1,31 @@
+.time {
+    @include grid-row();
+    header {
+        @include grid-column(12);
+    }
+    h2 {
+        @include grid-column(12);
+    }
+    h4 {
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+    .window {
+        @include grid-column(4);
+        text-align: center;
+    }
+    .windowStart {
+        @include grid-column-offset(1);
+        margin-bottom: 40px;
+    }
+    #ampersand {
+        @include grid-column(2);
+        text-align: center;
+        margin: 0;
+    }
+    .day {
+        @include grid-column(12);
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}

@@ -1,5 +1,12 @@
 <section class="bidForm">
-    
+
+
+    <header class="header">
+        <img src="assets/teeup_logo.png">
+        <!--<h1>teeUp</h1>-->
+        <p>On your time. On your budget.</p>
+    </header>
+
     <div class="error" ng-show="error">
         <h3>No Courses Match Criteria. Take a Mulligan and Try Again!</h3>
     </div>
@@ -7,7 +14,7 @@
         <label for="star">Choose Desired Course Star Rating</label>
         
         <div class="starBox">
-            <star-rating-comp on-click="onRatingChange($event)"></star-rating-comp>
+            <star-rating-comp size="'large'"on-click="onRatingChange($event)"></star-rating-comp>
         </div>
     </div>
 
@@ -37,12 +44,11 @@
         <p>
             <div class="miles">
                 <span>Look for courses within</span>
-                <input type="number" ng-model="miles">
+                <input type="number" placeholder="Miles" ng-model="miles">
             </div>
 
-        <span>miles from</span> 
-
             <div class="loc">
+                <span>miles from</span> 
                 <input type="text" placeholder="Location" id="locationSearch">
             </div>
         </p>
@@ -65,6 +71,8 @@
     <a ui-sref="courseDashboard">
         <button class="courseBtn">Course?</button>
     </a>
+
+<popular></popular>
 
 </section>
 
