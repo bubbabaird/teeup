@@ -105,7 +105,7 @@ app.config(function ($stateProvider) {
     // checks screen size, and directs to appropriate home page view
     const width = window.innerWidth;
 
-    if (width > 400) {
+    if (width > 600) {
         $state.go('home');
     } else {
         $state.go('mobile');
