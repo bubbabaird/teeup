@@ -12,16 +12,7 @@
     }
     .window {
         @include grid-column(4);
-        .timeInput {
-            padding: 5px;
-            border: none;
-            border-bottom: solid 2px white;
-            background: transparent;
-            color: white;
-            outline: none;
-            // text-align: center;
-            // font-size: 1.2em;
-        }
+        text-align: center;
     }
     .windowStart {
         @include grid-column-offset(1);
