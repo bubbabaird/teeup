@@ -3,7 +3,7 @@
     background-color: white; 
 
     section {
-        @include grid-column(6);
+        @include grid-column(12);
     }
 
         .header {
@@ -16,8 +16,6 @@
             img {
                 width: 150px; 
                 margin-top: 10px;
-                margin-bottom: 10px; 
-
             }
         }
     
@@ -72,7 +70,6 @@
     }
 
         .curRange {
-            @include grid-column(5); 
             // font-family: $header-font; 
             h3 {
                 text-align: center; 
@@ -109,7 +106,7 @@
     } 
 
 
-    @media (min-width: 769px) {
+    @media (min-width: 426px) {
         @include grid-row(); 
 
             .listTitle {
@@ -124,6 +121,9 @@
             h3 {
                 text-align: center; 
             }
+        }
+        section {
+            @include grid-column(6);
         }
     }
 }
