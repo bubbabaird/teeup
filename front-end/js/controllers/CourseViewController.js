@@ -1,6 +1,9 @@
+
+
 module.exports = {
     name: 'CourseViewController',
     func: function ($scope, CourseService) {
+        
         $scope.bookings = CourseService.getBookings();
         $scope.range = CourseService.getRange();
         $scope.min_bid = '';
@@ -14,9 +17,5 @@ module.exports = {
             $scope.min_bid = '';
             $scope.max_bid = '';
         };
-        // $scope.changeStatus = function () {
-        //     CourseService.changeStatus();
-        // };
-        // $scope.teeTime = CourseService.CourseView(); 
     }
 }

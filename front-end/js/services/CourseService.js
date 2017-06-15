@@ -17,8 +17,9 @@ module.exports = {
 
         return {
             getBookings: function () {
-                $http.get('https://pure-peak-13504.herokuapp.com/reservations/' + 77).then(function (response) {
+                $http.get('https://teeup.herokuapp.com/reservations/' + 77).then(function (response) {
                     for (let i = 0; i < response.data.length; i++) {
+                        response.data[i].startTime = moment(response.data[i].startTime).format('LT');
                         bookings.push(response.data[i]);
                     }
                 }) 
@@ -35,7 +36,7 @@ module.exports = {
             },
 
             getPopCourse: function () {
-                return $http.get('https://pure-peak-13504.herokuapp.com/courses').then(function (response) {
+                return $http.get('https://teeup.herokuapp.com/courses').then(function (response) {
                     return response.data[0]; 
                 })
             }

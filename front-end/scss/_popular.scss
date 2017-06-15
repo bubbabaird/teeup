@@ -5,29 +5,29 @@
             background-color: #3f99de;
             // position: fixed;
             bottom: 0px;
-            height: 200px; 
-            left:0px;
+            // height: 170px; 
+            // left:0px;
             color: white; 
+            
 
             ul{
                 list-style: none;
             }
             
             .course {
-                @include grid-column(12);
-                // font-family: $primary-font;
-                // border: 1px solid white;  
-                // background-color: #29c566;
-                // margin-bottom: 20%; 
-                // border-radius: 50px; 
+                // @include grid-column(12);
 
                 img {
+                    @include grid-column(5); 
                     height: 200px; 
-                    width: 100%; 
-                    text-align: center; 
+                    // width: 100%; 
                     display: block; 
-                    margin-left: 0;  
-                    // border-radius: 100px; 
+                    padding-right: 8%; 
+                }
+
+                p {
+                    margin-left: 50px;
+                    text-align: center;  
                 }
             
             }
