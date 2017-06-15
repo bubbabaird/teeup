@@ -27,5 +27,28 @@
         @include grid-column(12);
         text-align: center;
         margin-bottom: 30px;
+        input {
+            display: none;
+        }
+        div {
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+            cursor: pointer;
+            vertical-align: middle;
+            background: #FFF;
+            border: 1px solid #d2d2d2;
+            border-radius: 100%;
+        }
+        input:checked + div {
+            background: #29c566;
+        }
+        input + div:hover {
+            border-color: gray;
+        }
+        label {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
     }
 }
