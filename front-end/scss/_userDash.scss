@@ -14,9 +14,11 @@
     font-family: $header-font;
     text-align: center;
   }
-  img {
+  .coursePic {
     width: 100%;
     text-align: center;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
   }
   .courseInfo {
     font-family: $primary-font;
@@ -53,6 +55,8 @@
   #map {
     width: 100%;
     height: 500px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
   }
 }
 
@@ -87,6 +91,7 @@
     .body {
       background-color: white;
       color: black;
+      padding-bottom: 75px;
       margin-bottom: 75px;
       @include grid-row();
       #approved {
@@ -98,6 +103,7 @@
           @include grid-column(6);
           #map {
             border: 5px solid gray;
+            text-align: center;
           }
         }
         .left {
