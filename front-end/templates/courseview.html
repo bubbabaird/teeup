@@ -9,13 +9,15 @@
             <h1>The Tradition Golf Course</h1>
         </div>
         
-        <div class="list">
-            <h3>Tee Times</h3>
-        <ul ng-repeat="booking in bookings">
-            <p><span class="labeltime"> Time: </span> {{booking.startTime}}</p>
-            <p><span class="labelnum"> Number of Golfers: </span> {{booking.golfers}}</p>
-        </ul> 
-        </div>
+        <section class="bookingList">
+            <h3 class="listTitle">Todays Tee Times</h3>
+            <div class="list">
+                <ul ng-repeat="booking in bookings">
+                    <p><span class="labeltime"> Time: </span> {{booking.startTime}}</p>
+                    <p><span class="labelnum"> Golfers: </span> {{booking.golfers}}</p>
+                </ul> 
+            </div>
+        </section>
 
         <div class="curRange">
             <h3>Current Range: ${{course.minPrice}} to ${{course.maxPrice}}</h3>
