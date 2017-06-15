@@ -70,16 +70,6 @@
         margin: 0px 10px 0px 10px;
         text-align: center;
         font-weight: bolder;
-//         input {
-//             padding: 10px;
-//             border: none;
-//             border-bottom: solid 2px white;
-//             background: transparent;
-//             color: white;
-//             outline: none;
-//             display: block;
-//             margin: 0 auto;
-        
         }
 
         #golfercount {
@@ -97,35 +87,90 @@
 
 .buttons {
     text-align: center; 
+    @include grid-column(12); 
 
     .bidBtn {
+            display: block; 
             color: white;
             font-weight: bolder;
             font-size: 1.2em;
+            margin-left: 20%; 
             margin-top: 20px;
             border: 1px solid white;
             border-radius: 50px;
-            width: 40%;
+            width: 60%;
             text-align: center;
             height: 50px;
             font-family: $primary-font;
             background-color: #29c566;
-            margin-bottom: 5%; 
+            margin-bottom: 2%; 
         }
 
         .courseBtn {
-            color: white;
-            font-weight: bolder;
-            font-size: 1.2em;
-            margin-top: 20px;
-            border: 1px solid white;
-            border-radius: 50px;
-            width: 40%;
-            text-align: center;
-            height: 50px;
-            font-family: $primary-font;
-            background-color: #29c566;
+        //     color: white;
+        //     font-weight: bolder;
+        //     font-size: 1.2em;
+        //     margin-top: 20px;
+        //     border: 1px solid white;
+        //     border-radius: 50px;
+        //     width: 40%;
+        //     text-align: center;
+        //     height: 50px;
+        //     font-family: $primary-font;
+        //     background-color: #29c566;
             margin-bottom: 5%; 
+        }
+    }
+}
+
+
+@media (min-width: 769px) {
+
+    .bidForm {
+        @include grid-row(); 
+    
+        .windows {
+        display: inline-block; 
+        margin-left: 29%; 
+  
+
+        .windowStart {
+            @include grid-column(5); 
+            display: inline; 
+            text-align: center;
+            display: inline-block;
+            
+
+            label {
+                display: inline-block;
+            }
+        }
+
+        .windowEnd {
+            @include grid-column(5); 
+            margin-top: 2%; 
+            text-align: center;
+        }
+    }
+
+        .day {
+            @include grid-column(12); 
+            margin-top: 2%; 
+            margin-bottom: 2%; 
+            margin-left: 1%; 
+            text-align: center;
+        }
+
+        .courseSearch {
+            text-align: center;
+            margin-left: 9px; 
+
+            .miles .loc {
+                text-align: center;
+            }
+        }
+        .golferNum {
+            margin-left: 30%; 
         }
     }
 }

@@ -1,4 +1,7 @@
 .courseView {
+    @include grid-row(); 
+    background-color: white; 
+
         .header {
             @include grid-column(12);
             background-color: #3f99de;
@@ -10,19 +13,62 @@
                 width: 150px; 
             }
         }
-
+    
     .listBox {
-        background-color: white; 
+        // background-color: white; 
         color: black; 
-    }
+    
 
     .courseTitle {
         @include grid-column(12); 
+        // width: 100%; 
         text-align: center; 
     }
 
-    .label {
+    .list {
+        @include grid-column(5); 
+        border: 5px solid grey; 
+        overflow: scroll; 
+        margin-left: 10px; 
+        display: inline-block; 
+    
+    .labeltime {
         font-weight: bold; 
+        // margin-right: 60px; 
+      
     }
 
+    .labelnum {
+        font-weight: bold; 
+        // margin-right: 20px; 
+      
+    }
+}
+
+    .curRange {
+        @include grid-column(5); 
+    
+        h3 {
+            text-align: center; 
+            margin-left: 0;
+        }
+    
+        button {
+                display: block; 
+                color: white;
+                font-weight: bolder;
+                font-size: 1em;
+                margin-left: 32%; 
+                margin-top: 20px;
+                border: 1px solid white;
+                border-radius: 50px;
+                width: 40%;
+                text-align: center;
+                height: 50px;
+                font-family: $primary-font;
+                background-color: #29c566;
+                margin-bottom: 2%; 
+        }
+    }
+    } 
 }

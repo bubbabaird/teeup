@@ -18,10 +18,16 @@
                 // @include grid-column(12);
 
                 img {
+                    @include grid-column(5); 
                     height: 200px; 
-                    width: 100%; 
+                    // width: 100%; 
                     display: block; 
                     padding-right: 8%; 
+                }
+
+                p {
+                    margin-left: 50px;
+                    text-align: center;  
                 }
             
             }
