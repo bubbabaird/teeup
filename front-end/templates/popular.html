@@ -1,11 +1,18 @@
 <section class="popular" >
-    <h2>Featured Courses</h2>
-    <ul>
+    <h2>Popular Courses in Your Area</h2>
+    <div class="popCourseImg course">
+        <img src="{{popCourse.imageHero}}">
+    </div>
+    <div class="popCourseInfo course">
+        <h2>{{ popCourse.name }}</h2>
+        <p>Star Rating: {{ popCourse.starRating }}</p>
+        <p>Booked 89 Times in the Last Week</p>
+    </div>
+    <!--<ul>
         <li class="course">
             <img src="{{popCourse.imageHero}}">
-            <!--<p>{{ popCourse.imageHero }}</p>-->
             <p>Course: {{ popCourse.name }}</p>
             <p>Star Rating: {{ popCourse.starRating }}</p>
         </li>
-    </ul>
+    </ul>-->
 </section>

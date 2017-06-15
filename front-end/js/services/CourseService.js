@@ -6,14 +6,9 @@ module.exports = {
             // { teeTime: '7:30', golfers: 3, id: "Bob Vance" },
             // { teeTime: '10:00', golfers: 2, id: "Frank Reynolds" },
             // { teeTime: '9:52', golfers: 1, id: "Brian Lefevre" },
-        ]
+        ];
 
-        const range = {
-            min: 25,
-            max: 45,
-        }
-
-
+        const course = {};
 
         return {
             getBookings: function () {
@@ -22,17 +17,32 @@ module.exports = {
                         response.data[i].startTime = moment(response.data[i].startTime).format('LT');
                         bookings.push(response.data[i]);
                     }
-                }) 
+                });
+                
                 return bookings;
             },
-            // getBookings: function () {
-            //     return bookings;
-            // },
-            getRange: function () {
-                return range;
+            getCourse: function () {
+                $http.get('https://teeup.herokuapp.com/courses/' + 77).then(function (response) {
+                    console.log(response.data);
+                    course.name = response.data.name;
+                    course.minPrice = response.data.minPrice;
+                    course.maxPrice = response.data.maxPrice;
+                    course.openTime = response.data.openTime;
+                    course.closeTime = response.data.closeTime;
+                    course.starRating = response.data.starRating;
+                    course.gcLat = response.data.gcLat;
+                    course.gcLong = response.data.gcLong;
+                    course.location = response.data.location;
+                    course.imageHero = response.data.imageHero;
+                    course.enabled = response.data.enabled;
+                });
+
+                return course;
             },
-            setRange: function (req) {
-                console.log(req);
+            setRange: function (newRange) {
+                $http.put('https://teeup.herokuapp.com/courses/' + 77, newRange).then(function (response) {
+                    console.log(response);
+                })
             },
 
             getPopCourse: function () {
@@ -40,7 +50,6 @@ module.exports = {
                     return response.data[0]; 
                 })
             }
-
         }
     }
 }
