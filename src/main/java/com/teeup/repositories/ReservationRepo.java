@@ -15,5 +15,5 @@ import java.util.List;
 public interface ReservationRepo extends CrudRepository<Reservation, Integer> {
 //    @Query("SELECT * FROM GolfCourses WHERE g.name LIKE ?1%")
 //    List<GolfCourse> findBy(String name);
-    List<Reservation> findByGolfCourseAndStartTimeAfter(GolfCourse g, LocalDateTime start);
+    List<Reservation> findByCourseAndStartTimeAfter(GolfCourse g, LocalDateTime start);
 }

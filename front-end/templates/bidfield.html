@@ -30,10 +30,12 @@
     <div class="day">
         <label>
             <input type="radio" name="day" value="today" ng-model="selected_day">
+            <div></div>
             Today
         </label>
         <label>
             <input type="radio" name="day" value="tomorrow" ng-model="selected_day">
+            <div></div>
             Tomorrow
         </label>
     </div>
@@ -55,6 +57,7 @@
     <div class="golferNum">
         <label for="golfercount">How many in your Group?</label>
         <select id="golfercount" value=""number data-default ng-model="golfer_number">
+            <option value=''>Group Size</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -73,7 +76,7 @@
 
 
     <a ui-sref="courseDashboard">
-        <button class="courseBtn">Are You A Course?</button>
+        <button class="courseBtn">Course Operators, Click Here to Login</button>
     </a>
 </div>
 

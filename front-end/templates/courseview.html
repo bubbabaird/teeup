@@ -19,16 +19,10 @@
             </div>
         </section>
 
-        <section class="curRange">
-            <h3>Current Range: ${{range.min}} to ${{range.max}}</h3>
-            <div class="inputRange">
-                <p><input type="number" placeholder="Min" ng-model="min_bid"> to <input type="number" placeholder="Max" ng-model="max_bid"></p>
-                <button ng-click="changeRange()">Update Range</button>
-            </div>
-        </section>
+        <div class="curRange">
+            <h3>Current Range: ${{course.minPrice}} to ${{course.maxPrice}}</h3>
+            <p><input type="number" placeholder="Min" ng-model="min_bid"> to <input type="number" placeholder="Max" ng-model="max_bid"></p>
+            <button ng-click="changeRange()">Update Range</button>
+        </div>
     </div>
-        <!--<div>
-            <h3>Current Status: Accepting Bookings</h3>
-            <button ng-click="changeStatus()">Change Status</button>
-        </div>-->
 </section>
