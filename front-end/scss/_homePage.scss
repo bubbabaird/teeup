@@ -5,6 +5,9 @@
     font-family: $primary-font;
     .error {
         background-color: red;
+        text-align: center;
+        font-family: $header-font;
+        vertical-align: middle;
     }
     .header {
         @include grid-column(12);
@@ -12,37 +15,34 @@
         color: white; 
         font-family: $header-font;
         text-align: center; 
-
         img {
             width: 150px; 
+            margin-top: 10px;
         }
     }
     .textForm {
-        margin-top: 20%;
-        margin-bottom: 2%; 
         text-align: center;
     }
 
     .windows {
-        display: inline-block; 
-        margin-left: 22%; 
+        @include grid-row(); 
+        div {
+            margin-top: 20px;
+        }
 
         .windowStart {
-            @include grid-column(5); 
-            // display: inline; 
-            margin-top: 2%; 
-            text-align: center;
-            // display: inline-block;
-
-            label {
-                display: inline-block;
-            }
+            @include grid-column(6); 
+            text-align: right;
         }
 
         .windowEnd {
-            @include grid-column(5); 
-            margin-top: 2%; 
-            text-align: center;
+            @include grid-column(6); 
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-right: 10px;
         }
     }
 
@@ -51,20 +51,41 @@
         margin-top: 2%; 
         margin-bottom: 2%; 
         text-align: center;
+        input {
+                display: none;
+            }
+            div {
+                height: 20px;
+                width: 20px;
+                display: inline-block;
+                cursor: pointer;
+                vertical-align: middle;
+                background: #FFF;
+                border: 1px solid #d2d2d2;
+                border-radius: 100%;
+            }
+            input:checked + div {
+                background: #29c566;
+            }
+            input + div:hover {
+                border-color: gray;
+            }
     }
     .courseSearch {
         text-align: center;
-        margin-left: 20%; 
-
+        input {
+            border: none;
+            border-bottom: 2px solid gray;
+            outline: none;
+            text-align: center;
+        }
         .miles .loc {
             text-align: center;
-
         }
     }
 
     .golferNum {
-        margin-left: 24%; 
-
+        text-align: center;
         label {
 
         margin: 0px 10px 0px 10px;
@@ -73,7 +94,7 @@
         }
 
         #golfercount {
-            width: 30%; 
+            width: 150px;
             border: none; 
 
         }
@@ -81,6 +102,12 @@
 
     .bidNum {
         text-align: center; 
+        input {
+            border: none;
+            border-bottom: 2px solid gray;
+            outline: none;
+            text-align: center;
+        }
     }
 
 
@@ -107,18 +134,7 @@
         }
 
         .courseBtn {
-        //     color: white;
-        //     font-weight: bolder;
-        //     font-size: 1.2em;
-        //     margin-top: 20px;
-        //     border: 1px solid white;
-        //     border-radius: 50px;
-        //     width: 40%;
-        //     text-align: center;
-        //     height: 50px;
-        //     font-family: $primary-font;
-        //     background-color: #29c566;
-            margin-bottom: 5%; 
+            margin-top: 20px;
         }
     }
 }
@@ -128,28 +144,20 @@
 
     .bidForm {
         @include grid-row(); 
-    
-        .windows {
-        display: inline-block; 
-        margin-left: 29%; 
-  
-
         .windowStart {
-            @include grid-column(5); 
+            @include grid-column(6); 
             display: inline; 
-            text-align: center;
-            display: inline-block;
+            text-align: right;
             
 
             label {
-                display: inline-block;
+                display: block;
             }
         }
 
         .windowEnd {
-            @include grid-column(5); 
-            margin-top: 2%; 
-            text-align: center;
+            @include grid-column(6);  
+            text-align: left;
         }
     }
 
@@ -163,15 +171,11 @@
 
         .courseSearch {
             text-align: center;
-            margin-left: 9px; 
-
+            // margin-left: 9px; 
             .miles .loc {
                 text-align: center;
             }
         }
-        .golferNum {
-            margin-left: 30%; 
-        }
     }
-}
+
 

@@ -3,17 +3,13 @@
 module.exports = {
     name: 'CourseViewController',
     func: function ($scope, CourseService) {
-        
         $scope.bookings = CourseService.getBookings();
-        $scope.range = CourseService.getRange();
-        $scope.min_bid = '';
-        $scope.max_bid = '';
+        $scope.course = CourseService.getCourse();
+        
         $scope.changeRange = function () {
-            let rangeReq = {
-                min: $scope.min_bid,
-                max: $scope.max_bid,
-            }
-            CourseService.setRange(rangeReq);
+            $scope.course.minPrice = $scope.min_bid;
+            $scope.course.maxPrice = $scope.max_bid;
+            CourseService.setRange($scope.course);
             $scope.min_bid = '';
             $scope.max_bid = '';
         };
