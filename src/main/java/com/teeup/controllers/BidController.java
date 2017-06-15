@@ -101,6 +101,18 @@ public class BidController {
 
         return reservations;
     }
+    /*
+    * GET
+    * a list of all golf courses
+    *
+    * */
+    @CrossOrigin
+    @RequestMapping(path = "/courses/{golf_course_id}", method = RequestMethod.GET)
+    public GolfCourse courses(@PathVariable("golf_course_id") int courseId) {
+//        List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findByGolfCourseAndStartTimeAfter(, LocalDateTime);
+
+        return golfCourseRepo.findOne(courseId);
+    }
 /*
 * GET
 * a list of all golf courses
@@ -108,14 +120,13 @@ public class BidController {
 * */
     @CrossOrigin
     @RequestMapping(path = "/courses", method = RequestMethod.GET)
-    public List<GolfCourse> courses() {
-//        List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findByGolfCourseAndStartTimeAfter(, LocalDateTime);
+    public List<GolfCourse> course() {
 
         return (List)golfCourseRepo.findAll();
     }
 /*
 * PUT
-* an update on any updated golf course information
+* an update on any of the information for a golf course
 *
 * */
     @CrossOrigin
