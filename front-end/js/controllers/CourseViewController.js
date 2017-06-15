@@ -1,5 +1,3 @@
-
-
 module.exports = {
     name: 'CourseViewController',
     func: function ($scope, CourseService) {
