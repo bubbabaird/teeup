@@ -1,4 +1,118 @@
-      #map {
-        width: 100%;
-        height: 600px;
+.userDashboard {
+  header {
+    text-align: center;
+    p {
+      font-family: $header-font;
+      margin: 0;
+    }
+    .logo {
+      width: 150px;
+      margin-top: 10px;
+    }
+  }
+  h2 {
+    font-family: $header-font;
+    text-align: center;
+  }
+  .coursePic {
+    width: 100%;
+    text-align: center;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+  }
+  .courseInfo {
+    font-family: $primary-font;
+    label {
+      font-family: $header-font;
+    }
+    p {
+      padding: 0 10px 0 10px;
+      .label {
+        font-weight: 700;
+
       }
+    }
+    #address {
+      text-align: center;
+    }
+  }
+  .mapBtn {
+      text-align: center;
+      button {
+        color: white;
+        font-weight: bolder;
+        font-size: 1.2em;
+        margin: 20px 0 30px 0;
+        border: 1px solid white;
+        border-radius: 50px;
+        width: 60%;
+        text-align: center;
+        height: 50px;
+        font-family: $primary-font;
+        background-color: #29c566;
+      }
+  }
+  #map {
+    width: 100%;
+    height: 500px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+  }
+}
+
+/* Good idea: digest over time */
+    .desktopDefault {
+      display: none;
+    }
+
+    .mobileDefault {
+      display: block;
+    }
+
+.desktopDefault.enable, .mobileDefault.enable {
+  display: block;
+}
+
+@media (min-width: 650px){
+
+    .desktopDefault {
+      display: block;
+    }
+
+    .mobileDefault {
+      display: none;
+    }
+
+    header {
+      .logo {
+        margin-bottom: 20px;
+      }
+    }
+    .body {
+      background-color: white;
+      color: black;
+      padding-bottom: 75px;
+      margin-bottom: 75px;
+      @include grid-row();
+      #approved {
+        @include grid-column(12);
+      }
+      .courseInfo {
+        @include grid-row();
+        .right {
+          @include grid-column(6);
+          #map {
+            border: 5px solid gray;
+          }
+        }
+        .left {
+          @include grid-column(6);
+          text-align: center;
+          img {
+            width: 300px;
+            border: 5px solid gray;
+          }
+        }
+      }
+    }
+}

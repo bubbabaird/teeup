@@ -1,15 +1,13 @@
 <section class="bidForm">
-
-
     <header class="header">
         <img src="assets/teeup_logo.png">
-        <!--<h1>teeUp</h1>-->
         <p>On your time. On your budget.</p>
     </header>
 
     <div class="error" ng-show="error">
         <h3>No Courses Match Criteria. Take a Mulligan and Try Again!</h3>
     </div>
+
     <div class="textForm">
         <label for="star">Choose Desired Course Star Rating</label>
         
@@ -18,28 +16,26 @@
         </div>
     </div>
 
-<div class="windows">
-    <div class="windowStart">
-        <label for="start">Window Start</label>
-        <input type="time" id="start" ng-model="start_time">
-    </div>
-
-    <div class="windowEnd">
-        <label for="end">Window End</label>
-        <input type="time" id="end" ng-model="end_time">
-    </div>
+    <div class="windows">
+        <div class="windowStart">
+            <label for="start">Window Start</label>
+            <input type="time" id="start" ng-model="start_time">
+        </div>
+        <div class="windowEnd">
+            <label for="end">Window End</label>
+            <input type="time" id="end" ng-model="end_time">
+        </div>
     </div>
 
     <div class="day">
-    <label>
-        <input type="radio" name="day" value="today" ng-model="selected_day">
-        Today
-    </label>
-    <label>
-        <input type="radio" name="day" value="tomorrow" ng-model="selected_day">
-        Tomorrow
-    </label>
-
+        <label>
+            <input type="radio" name="day" value="today" ng-model="selected_day">
+            Today
+        </label>
+        <label>
+            <input type="radio" name="day" value="tomorrow" ng-model="selected_day">
+            Tomorrow
+        </label>
     </div>
 
     <div class="courseSearch">
@@ -57,30 +53,32 @@
     </div>
 
     <div class="golferNum">
-    <label for="golfercount">How many in your Group?</label>
-    <select id="golfercount" value=""number data-default ng-model="golfer_number">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
+        <label for="golfercount">How many in your Group?</label>
+        <select id="golfercount" value=""number data-default ng-model="golfer_number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
     </div>
     
     <div class="bidNum">
-    <p>
-        $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> / golfer
-    </p>
+        <p>
+            $ <input type="number" placeholder="Your Bid Amount" ng-model='bid_amount'> / golfer
+        </p>
     </div>
 
-<div class="buttons">
-    <button class="bidBtn" ng-click="updateBid()" ng-disabled="!valid">Place Bid</button>
+    <div class="buttons">
+        <button class="bidBtn" ng-click="updateBid()" ng-disabled="!valid">Place Bid</button>
+
 
     <a ui-sref="courseDashboard">
         <button class="courseBtn">Are You A Course?</button>
     </a>
 </div>
 
-<popular></popular>
+
+    <popular></popular>
 
 </section>
 

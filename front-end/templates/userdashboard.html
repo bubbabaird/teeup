@@ -4,16 +4,31 @@
 </section>
 -->
 
-<section class="userDashboard" >
-
-            <h2>Accepted Bid!</h2>
-            <img src="{{course.image}}">
-            <p>Course: {{ course.name }}</p>
-            <p>Address: {{ course.location }}</p>
-            <p>Star Rating: {{ course.rating }}</p>
-            <p>Bid Amount: {{ course.bid }}</p>
-            <p>Tee Time: {{ course.time }}</p>
-
+<section class="userDashboard">
+    <header>
+        <img class="logo" src="assets/teeup_logo.png">
+        <p>On your time. On your budget.</p>
+    </header>
+    <div class="body">
+        <h2 id="approved">Tee it Up! Your Bid is Approved!</h2>
+        <!--<img src="{{course.image}}">-->
+        <div class="courseInfo">
+            <div class="left">
+                <img class="coursePic" src="{{course.image}}">
+                <label><h2>{{ course.name }}</h2></label>
+                <p><span class="label">Tee Time:</span> {{ course.time }}</p>
+                <p><span class="label">Address:</span></p>
+                <p id="address">{{ course.location }}</p>
+                <p><span class="label">Star Rating:</span> {{ course.rating }}</p>
+                <p><span class="label">Bid Amount:</span> {{ course.bid }}</p>
+            </div>
+            <div class="right">
+                <div id="map" class="desktopDefault" ng-class="{ enable : !mapShow }"></div>
+            </div>
+        </div>
+        <div class="mapBtn mobileDefault">
+            <button ng-show="mapShow" ng-click="showMap()">Show map</button>
+        </div>
+        <!--<div id="map" ng-hide="mapShow"></div>-->
+    </div>
 </section>
-
-<div id="map"></div>

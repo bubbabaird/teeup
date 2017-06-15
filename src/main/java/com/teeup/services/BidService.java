@@ -32,7 +32,7 @@ public class BidService {
 //      Make a new ArrayList called 'currentList' that will hold a list of golf courses
 
 //      this list will hold golf courses
-        List<GolfCourse> a = (List) courses.findAllOrderByStarRatingDesc();
+        List<GolfCourse> a = courses.findAllOrderByStarRatingDesc();
 
 //      for each golfcourse in g (variable that we have named): a is the list of what we are iterating over
 
