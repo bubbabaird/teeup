@@ -97,7 +97,7 @@ public class BidController {
 
         // ask our reservation repository: give me all the reservations filtered by THIS golf course,
         // starting after NOW.
-        List<Reservation> reservations = reservationRepo.findByGolfCourseAndStartTimeAfter(course, LocalDateTime.now());
+        List<Reservation> reservations = reservationRepo.findByCourseAndStartTimeAfter(course, LocalDateTime.now());
 
         return reservations;
     }
@@ -109,7 +109,7 @@ public class BidController {
     @CrossOrigin
     @RequestMapping(path = "/courses/{golf_course_id}", method = RequestMethod.GET)
     public GolfCourse courses(@PathVariable("golf_course_id") int courseId) {
-//        List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findByGolfCourseAndStartTimeAfter(, LocalDateTime);
+//        List<GolfCourse> courses = (List<GolfCourse>)golfCourseRepo.findByCourseAndStartTimeAfter(, LocalDateTime);
 
         return golfCourseRepo.findOne(courseId);
     }
