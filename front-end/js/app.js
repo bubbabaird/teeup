@@ -99,8 +99,6 @@ app.config(function ($stateProvider) {
         url: '/popular',
         component: 'popular',
     });
-
-// });
 }).run(function ($state) {
     // checks screen size, and directs to appropriate home page view
     const width = window.innerWidth;
